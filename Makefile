@@ -2,6 +2,8 @@ DOCTYPE = LDM
 DOCNUMBER = 742
 DOCNAME = LDM-742
 
+TESTSPEC = LDM-639
+
 tex = $(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 GITVERSION := $(shell git log -1 --date=short --pretty=%h)
@@ -47,3 +49,10 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
 	/bin/echo '\newcommand{\vcsRevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsDate}{$(GITDATE)}' >>$@
+	/bin/echo '\newcommand{\testspec}{$(TESTSPEC)}' >>$@
+
+myacronyms.txt :
+	touch myacronyms.txt
+
+skipacronyms.txt :
+	touch skipacronyms.txt

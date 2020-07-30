@@ -1,0 +1,3944 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% generated from JIRA project LVV
+% using template at <template>.
+% using docsteady version 1.2rc20.post6+gaf63cfe.d20200730
+% Please do not edit -- update information in Jira instead
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{ DM Infrastructure Verification Elements }
+\label{sec:ves}
+
+The following is the list of verification elements defined in the context of the Infrastructure component of the DM subsystem.
+
+\subsection{[LVV-5] DMS-REQ-0008-V-01: Pipeline Availability }\label{lvv-5}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-5}{LVV-5} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T171 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Hard to test how often the system crashes. Show that a night can be
+processed without crashes is good. Show that with ``chaos monkey'' the
+system recovers. Report statistics on processing precursor data. True up
+time statistics can only be obtained post commissioning.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0008 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Except in cases of major disaster, the DMS shall
+have no unscheduled outages of the DMS pipelines extending over a period
+greater than \textbf{productionMaxDowntime}. A major disaster is defined
+as a natural disaster or act of war (e.g. flood, fire, hostile acts)
+that compromises or threatens to compromise the health and integrity of
+the DMS physical facility, computing equipment, or operational
+personnel. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{productionMaxDowntime = 24{{[}hour{]}}} Maximum allowable outage
+of active DM production. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This applies to active productions only. It is
+allowed for the Alert Production to be down for longer periods during
+observatory scheduled maintenance, and for the Data Release Production
+to be down during development and validation periods between
+productions. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T171}{LVV-T171} & \multicolumn{4}{p{12cm}}{ Verify implementation of Pipeline Availability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that Data Management System pipelines are available for use
+without disruptions of greater than productionMaxDowntime (24 hours). ~
+This requires a regimented change control process and testing
+infrastructure for all pipelines and their underlying software services,
+and regimented management and monitoring of compute and networking
+resources. ~The list of services covered by this test include: Image and
+EFD Archiving, Prompt Processing, OCS Driven Batch, Telemetry Gateway,
+Alert Distribution, Alert Filtering, Batch Production, Data Backbone,
+Compute/Storage/LAN, Inter-Site Networks, and Service Management and
+Monitoring.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-36] DMS-REQ-0089-V-01: Solar System Objects Available Within Specified Time }\label{lvv-36}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-36}{LVV-36} &
+Eric Bellm & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T102 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Reduce some L1 data covering a large enough epoch to determine orbits.
+Then reduce an entire night of L1 data, run dayMOPS, determine orbit
+updates, wait for public information to be updated. Was it less than
+L1PublicT?
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0089 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Detected moving objects and associated metadata
+shall be available for public access in the DMS science data archive
+within time \textbf{L1PublicT} of their generation by the DMS. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0086 & Produce Orbit Catalog \\
+DMS-REQ-0004 & Nightly Data Accessible Within Specified Time \\
+OSS-REQ-0127 & Level 1 Data Product Availability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T102}{LVV-T102} & \multicolumn{4}{p{12cm}}{ Verify implementation of Solar System Objects Available Within Specified
+Time } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Execute single-day operations rehearsal, observe data products generated
+in time
+}
+  
+ \newpage \subsection{[LVV-40] DMS-REQ-0098-V-01: Generate DMS Performance Report Within Specified Time }\label{lvv-40}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-40}{LVV-40} &
+Simon Krughoff & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T104 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Reduce a night of L1 data. Wait for report to appear. Is it on time? Is
+it human-readable? Is the text file machine readable?
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0098 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall generate a nightly DMS Performance
+Report within time \textbf{perfReportComplTime} in both human-readable
+and machine-readable forms. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{perfReportComplTime = 4{{[}hour{]}}} Latency for producing Level
+1 DMS Performance Report. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The Report must be timely in order to evaluate
+whether changes to hardware, software, or procedures are needed for the
+following night's observing. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0131 & Nightly Summary Products \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T104}{LVV-T104} & \multicolumn{4}{p{12cm}}{ Verify implementation of Generate DMS Performance Report Within
+Specified Time } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS can generate a nightly Perfomance Report within
+perfReportComplTime
+}
+  
+ \newpage \subsection{[LVV-42] DMS-REQ-0100-V-01: Generate Calibration Report Within Specified Time }\label{lvv-42}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-42}{LVV-42} &
+Robert Lupton & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T105 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Reduce a night of L1 data and day time calibrations. Wait for report to
+appear. Is it on time? Is the timeline mainly driven by day time
+calibrations?
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0100 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall generate a nightly Calibration
+Report within time \textbf{calibReportComplTime} in both human-readable
+and machine-readable forms. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{calibReportComplTime = 4{{[}hour{]}}} Latency for producing
+Level 1 Calibration Report. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The Report must be timely in order to evaluate
+whether changes to hardware, software, or procedures are needed for the
+following night's observing. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0131 & Nightly Summary Products \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T105}{LVV-T105} & \multicolumn{4}{p{12cm}}{ Verify implementation of Generate Calibration Report Within Specified
+Time } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS can generate a night Calibration Report ~in both
+human-readable and machine-parseable forms.
+}
+  
+ \newpage \subsection{[LVV-44] DMS-REQ-0102-V-01: Provide Engineering \& Facility Database Archive }\label{lvv-44}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-44}{LVV-44} &
+Colin Slater & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T153 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+DM-only demonstration: use an EFD clone, manually set some values in it,
+show that the values appear in the DM version of the EFD and are
+publically queryable. Commissioning demonstration: With a test EFD being
+populated in real-time by OCS tasks in a simulated summit environment,
+demonstrate that the values are public within 24 hours.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0102 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Engineering and Facility data from the
+Observatory Control System and associated metadata shall be permanently
+archived by the DMS and available for public access within
+\textbf{L1PublicT} hours of their generation by the OCS. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{L1PublicT = 24{{[}hour{]}}} Maximum time from the acquisition of
+science data to the release of associated Level 1 Data Products (except
+alerts) \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0132 & Engineering and Facility Database Archive \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T153}{LVV-T153} & \multicolumn{4}{p{12cm}}{ Verify implementation of Provide Engineering and Facility Database
+Archive } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate Engineering and Facilities Data (images, associated
+metadata, and observatory environment and control data) are archived and
+available for public access within \textbf{L1PublicT (24 hours)}.~
+}
+  
+ \newpage \subsection{[LVV-53] DMS-REQ-0125-V-01: Software framework for Level 3 catalog processing }\label{lvv-53}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-53}{LVV-53} &
+Simon Krughoff & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T120 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+I don't entirely understand this requirement.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0125 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide a software framework that
+facilitates Level 3 processing of catalogs. This framework shall provide
+a means for applying user-provided processing to catalog data, including
+measuring and ensuring the completeness of the application - i.e., that
+the specified processing was applied to all of, and only, the entire
+contents of the desired catalog(s). \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0122 & Provenance \\
+DMS-REQ-0120 & Level 3 Data Product Self Consistency \\
+OSS-REQ-0121 & Open Source, Open Configuration \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T120}{LVV-T120} & \multicolumn{4}{p{12cm}}{ Verify implementation of Software framework for Level 3 catalog
+processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Colin Slater & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that user-driven Level 3 processing can be consistently applied
+to all records in a catalog.
+}
+  
+ \newpage \subsection{[LVV-54] DMS-REQ-0126-V-01: Access to images for external Level 3 processing }\label{lvv-54}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-54}{LVV-54} &
+Robert Gruendl & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T207 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that images can be exported. Similar comments as for DMS-REQ-0122
+regarding maintenance and validation tools.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0126 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall facilitate Level 3 image
+processing that may take place at external facilities outside the DACs.
+This will principally be by facilitating the export of image datasets
+and the provision of tools for maintaining and validating exported data. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0180 & Data Products Query and Download Availability \\
+OSS-REQ-0140 & Production \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T207}{LVV-T207} & \multicolumn{4}{p{12cm}}{ Verify implementation of Access to images for external Level 3
+processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that bulk distribution of images, and accompanying
+maintenance/validation tools for Level 3 image products to outside of
+the Data Access Centers.
+}
+  
+ \newpage \subsection{[LVV-56] DMS-REQ-0128-V-01: Software framework for Level 3 image processing }\label{lvv-56}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-56}{LVV-56} &
+Simon Krughoff & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T121 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+I don't entirely understand this requirement.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0128 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide a software framework that
+facilitates Level 3 processing of image data. This framework shall
+provide a means for applying user-provided processing to image data,
+including measuring and ensuring the completeness of the application -
+i.e., that the specified processing was applied to all of, and only, the
+entire contents of the desired dataset. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0122 & Provenance \\
+DMS-REQ-0120 & Level 3 Data Product Self Consistency \\
+OSS-REQ-0121 & Open Source, Open Configuration \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T121}{LVV-T121} & \multicolumn{4}{p{12cm}}{ Verify implementation of Software framework for Level 3 image processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Colin Slater & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that user-specified Level 3 processing can be applied to the
+desired set of images.
+}
+  
+ \newpage \subsection{[LVV-65] DMS-REQ-0162-V-01: Pipeline Throughput }\label{lvv-65}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-65}{LVV-65} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T173 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+From a night's worth of test data. Simulate a night at the fastest
+observing cadence and worst case source density, and ensure the
+processing is complete before the next night would have started (for the
+longest observing night).
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0162 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will be sized such that the
+net throughput of the data processing pipelines will permit a complete
+processing of a night's observing data prior to the start of the next
+observing night, assuming no system outages. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0020 & Usable Observing Time \\
+OSS-REQ-0127 & Level 1 Data Product Availability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T173}{LVV-T173} & \multicolumn{4}{p{12cm}}{ Verify implementation of Pipeline Throughput } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that the Alert Production Pipeline is capable of processing
+nRawExpNightMax (2800) science exposures within a (24-nightDurationMax)
+12 hour period and issue alerts in offline batch mode.~
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-66] DMS-REQ-0163-V-01: Re-processing Capacity }\label{lvv-66}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-66}{LVV-66} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T174 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+For simulated LSST-scale data, run a mini DRP and verify that the
+resources available for DR1 are sufficient when scaled up.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0163 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide Processing, Storage, and
+Network resources capable of executing the DMS Data Release Production
+over all pre-existing survey data in a time no greater than
+\textbf{drProcessingPeriod}, without impacting observatory operations. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{drProcessingPeriod = 1{{[}year{]}}} Duration of the Data Release
+Production, including quality validation. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0134 & Level 2 Data Product Availability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T174}{LVV-T174} & \multicolumn{4}{p{12cm}}{ Verify implementation of Re-processing Capacity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS has sufficient processing, storage, and network to
+reprocess all data within ``drProcessingPeriod'' (1 year) while
+maintaining full Prompt Processing capability.
+}
+  
+ \newpage \subsection{[LVV-67] DMS-REQ-0164-V-01: Temporary Storage for Communications Links }\label{lvv-67}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-67}{LVV-67} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T175 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Must define ``mean time to repair'' the network. Temporary storage will
+soon be at the summit and should be sized according to the MTTR value.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0164 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will provide for temporary
+storage for a minimum of \textbf{tempStorageRelMTTR} of the mean time to
+repair of any communications network link at or before the source end of
+that link. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{tempStorageRelMTTR = 200{{[}percent{]}}} Temporary storage
+required relative to network Mean Time to Repair. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0162 & Pipeline Throughput \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T175}{LVV-T175} & \multicolumn{4}{p{12cm}}{ Verify implementation of Temporary Storage for Communications Links } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that storage capacity is present and usable to prevent data
+loss if networking is interrupted between summit and base, base and
+archive, or archive and DAC. ~The requirement is to have storage
+necessary to hold tempStorageReIMTTR (200\%) of the expected raw data
+that would arrive during the Mean Time to Repair (summToBaseNetMTTR = 24
+hours, baseToArchNetMTTR = 48 hours, ~archToDacNetMTTR = 48 hours).
+~This scale is further set by nCalibExpDay + nRawExpNightMax = 450 +
+2800 = ~3250 exposures/day.
+}
+  
+ \newpage \subsection{[LVV-68] DMS-REQ-0165-V-01: Infrastructure Sizing for ``catching up'' }\label{lvv-68}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-68}{LVV-68} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T176 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Verify that we have 150\% L1 compute capacity available (or 200\%
+depending on DMS-REQ-0162)
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0165 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will be sized such that after
+outages, ``catch up'' processing of the temporarily stored raw image
+data may occur at the rate of one night's observing data processed per
+day, without interrupting the current day's observatory operations. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0052 & Summit Data Buffer \\
+OSS-REQ-0051 & Summit-Base Connectivity Loss \\
+DMS-REQ-0162 & Pipeline Throughput \\
+OSS-REQ-0050 & Summit Power Grid Loss \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T176}{LVV-T176} & \multicolumn{4}{p{12cm}}{ Verify implementation of Infrastructure Sizing for ``catching up'' } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate Data Management System has sufficient excess capacity
+(compute infrastructure) to process one night's data (2800 exposures)
+within 24 hours while also maintaining nightly Alert Production (note
+this is very similar to
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T173}{LVV-T173}).~
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-69] DMS-REQ-0166-V-01: Incorporate Fault-Tolerance }\label{lvv-69}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-69}{LVV-69} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T177 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+For active infrastructure: Run ``chaos monkey'' tool to randomly bring
+down processes. Shutdown entire VMs during ingestion or data transfer.
+Power down entire switches on a rack. Check that all expected data
+products were archived correctly. For archive infrastructure: show that
+data are replicated at different sites and that we can tell if data
+become corrupt.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0166 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will incorporate as
+fault-tolerance features to prevent loss of data in the event of
+hardware or software failure. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T177}{LVV-T177} & \multicolumn{4}{p{12cm}}{ Verify implementation of Incorporate Fault-Tolerance } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that Data Management Systems have features that prevent data
+loss. ~Includes: MD5SUM/checksum verification for data transfer; RAID to
+eliminate single-point disk failures; multi-site and tape for disaster
+recovery of raw data; multiple site (and tape?) for backup/recovery of
+Data Release products; DB transaction logging and backup to maintain DB
+integrity. ~ (Note: storage to prevent loss in case of networking
+failures is covered in
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T175}{LVV-T175}
+). ~~
+}
+  
+ \newpage \subsection{[LVV-70] DMS-REQ-0167-V-01: Incorporate Autonomics }\label{lvv-70}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-70}{LVV-70} &
+Robert Gruendl & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T178 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Run L2 and L1 data processing with simulated/precursor data. Run ``chaos
+monkey'' tool to randomly bring down processes. Shutdown entire VMs
+during processing. Power down entire switches on a rack. Check that all
+expected data products were archived correctly with no loss. Will list
+all failure modes that we can think of and test against them. Include
+test for Byzantine failures.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0167 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The infrastructure will incorporate sufficient
+capability for self-diagnostics and recovery to provide for continuation
+of processing in the event of partial hardware or software failures. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} It is understood that the system performance may
+degrade with increasing numbers of failures. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0166 & Incorporate Fault-Tolerance \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T178}{LVV-T178} & \multicolumn{4}{p{12cm}}{ Verify implementation of Incorporate Autonomics } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that production systems monitor and report faults. ~Where
+possible fault mitigation can include re-start, re-submission, or return
+of partial products for triage.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-72] DMS-REQ-0170-V-01: Prefer Computing and Storage Down }\label{lvv-72}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-72}{LVV-72} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T182 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Agree that we have minimized compute and storage at summit.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0170 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS computing and storage equipment will be
+preferentially located at a lower altitude Facility (Base or Archive
+Center) versus the Summit Facility due to lower support costs and fewer
+reliability issues. Therefore any processing that can be done in either
+location will be allocated to a lower altitude Facility. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T182}{LVV-T182} & \multicolumn{4}{p{12cm}}{ Verify implementation of Prefer Computing and Storage Down } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Only build compute or storage facilities at the summit that are
+justified by operational need or to prevent loss of data during
+networking downtimes.
+}
+  
+ \newpage \subsection{[LVV-78] DMS-REQ-0176-V-01: Base Facility Infrastructure }\label{lvv-78}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-78}{LVV-78} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T189 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that the base facility has sufficient resources.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0176 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Base Facility shall provide sufficient
+computing, storage, and network infrastructure to support buffering and
+forwarding of all raw and crosstalk-corrected image data to the Archive
+Facility, a complete copy of the Archive Facility data holdings, and
+compute facilities to support Commissioning activities. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The Base Facility is co-located with the Chilean
+DAC, and also serves as a back-up for the Archive Center in the event of
+disaster. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0003 & The Base Facility \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T189}{LVV-T189} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base Facility Infrastructure } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the (a) planned infrastructure and (b) as-built
+infrastructure for the Base Facility satisfies the needs for data
+transfer and buffering, a copy of the Archive Facility, and support for
+Commissioning.
+}
+  
+ \newpage \subsection{[LVV-80] DMS-REQ-0178-V-01: Base Facility Co-Location with Existing Facility }\label{lvv-80}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-80}{LVV-80} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T190 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that the base facility is co-located.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0178 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Base Facility shall be co-located at an
+existing facility to leverage existing support and facility resources \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+OSS-REQ-0006 & Sites \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T190}{LVV-T190} & \multicolumn{4}{p{12cm}}{ Verify implementation of Base Facility Co-Location with Existing
+Facility } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the Base Facility is located at an existing known supported
+facility.
+}
+  
+ \newpage \subsection{[LVV-85] DMS-REQ-0185-V-01: Archive Center }\label{lvv-85}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-85}{LVV-85} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T197 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that sufficient resources exist. Show that AP, DRP and L3 systems
+can be run simultaneously.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0185 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Archive Center shall provide computing,
+storage, and network infrastructure to support, simultaneously: nightly
+processing including image processing, detection, association, and
+moving object pipelines, and the generation of all time-critical data
+products, i.e. alerts; the data release production, including Level-2
+data product creation, permanent storage for all data products (with
+provenance), including federated Level-3 products; and serve data for
+replication to data centers and end user sites. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0004 & The Archive Facility \\
+DMS-REQ-0163 & Re-processing Capacity \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T197}{LVV-T197} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive Center } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the Archive Center is sufficiently provisioned to support
+prompt processing, DRP, and data access needs.
+}
+  
+ \newpage \subsection{[LVV-86] DMS-REQ-0186-V-01: Archive Center Disaster Recovery }\label{lvv-86}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-86}{LVV-86} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T198 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Inspect plan for disaster recovery. Trigger fake data loss event and
+demonstrate that data are recovered.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0186 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Archive Center shall provide disaster
+recovery support preventing loss of LSST data in the case of
+infrastructure or facility-threatening events. This support shall enable
+recovery of all LSST archived data from backed up sources, including
+Data Access Centers. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0176 & Data Access \\
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T198}{LVV-T198} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive Center Disaster Recovery } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify disaster recovery plan for Archive Center.
+}
+  
+ \newpage \subsection{[LVV-87] DMS-REQ-0187-V-01: Archive Center Co-Location with Existing Facility }\label{lvv-87}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-87}{LVV-87} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T199 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that NCSA is NSF funded or that SLAC is DOE funded.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0187 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Archive Center shall be hosted at an
+existing NSF/DOE-funded supercomputing center. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0022 & Archive Site \\
+DMS-REQ-0161 & Optimization of Cost, Reliability and Availability in Order \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T199}{LVV-T199} & \multicolumn{4}{p{12cm}}{ Verify implementation of Archive Center Co-Location with Existing
+Facility } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify the Archive Center is located at an existing supported facility.
+}
+  
+ \newpage \subsection{[LVV-92] DMS-REQ-0193-V-01: Data Access Centers }\label{lvv-92}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-92}{LVV-92} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T209 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that computing, storage and network meet the design goals.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0193 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Data Access Centers shall provide computing,
+storage, and network infrastructure to support open access to LSST data
+products (with provenance) by end users. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0004 & The Archive Facility \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T209}{LVV-T209} & \multicolumn{4}{p{12cm}}{ Verify implementation of Data Access Centers } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Analysis \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the Data Access Centers are provisioned with computing
+resources necessary to support end-user access to LSST Data Products.
+}
+  
+ \newpage \subsection{[LVV-93] DMS-REQ-0194-V-01: Data Access Center Simultaneous Connections }\label{lvv-93}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-93}{LVV-93} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T210 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Simulate simultaneous connections and show that the minimum number are
+supported.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0194 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} At least \textbf{dacMinConnections} simultaneous
+connections shall be supported at each Data Access Center. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{dacMinConnections = 300{{[}integer{]}}} Minimum simultaneous
+connections to end-users. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T210}{LVV-T210} & \multicolumn{4}{p{12cm}}{ Verify implementation of Data Access Center Simultaneous Connections } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the each DAC can support at least dacMinConnections
+simultaneously
+}
+  
+ \newpage \subsection{[LVV-94] DMS-REQ-0196-V-01: Data Access Center Geographical Distribution }\label{lvv-94}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-94}{LVV-94} &
+Colin Slater & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T211 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that we have at least one DAC in the US and one DAC in Chile.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0196 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Data Access Centers will be hosted at
+facilities selected in at least the U.S. and the observatory host
+country to permit widest possible access to LSST data with the fewest
+possible network hops. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0193 & Data Access Centers \\
+OSS-REQ-0021 & Base Site \\
+OSS-REQ-0022 & Archive Site \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T211}{LVV-T211} & \multicolumn{4}{p{12cm}}{ Verify implementation of Data Access Center Geographical Distribution } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Analysis \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DACs are geographically distributed to provide
+low-latency access to data-rights community.
+}
+  
+ \newpage \subsection{[LVV-95] DMS-REQ-0197-V-01: No Limit on Data Access Centers }\label{lvv-95}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-95}{LVV-95} &
+Colin Slater & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T212 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that we have more than one DAC. Show that adding a new DAC is a
+documented procedure.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0197 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The number of Data Access Centers shall be
+limited only by available internal or external funding. No architectural
+constraints will be placed on the DMS that prohibit the addition of Data
+Access Centers at any time, subject to funding. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+DMS-REQ-0193 & Data Access Centers \\
+OSS-REQ-0021 & Base Site \\
+OSS-REQ-0022 & Archive Site \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T212}{LVV-T212} & \multicolumn{4}{p{12cm}}{ Verify implementation of No Limit on Data Access Centers } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Colin Slater & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that additional Data Access Centers can be set up.
+}
+  
+ \newpage \subsection{[LVV-115] DMS-REQ-0284-V-01: Level-1 Production Completeness }\label{lvv-115}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-115}{LVV-115} &
+Robert Lupton & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T107 \\
+LVV-T283 \\
+LVV-T284 \\
+LVV-T286 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+With simulated data backbone and DAQ, take data, disable network,
+continue taking data, put network back, check archive.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0284 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall ensure that all images taken by
+the camera and marked for Level-1 processing are eventually retrieved,
+archived, and processed even in the event of connectivity failure
+between downstream Facilities. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0052 & Summit Data Buffer \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T107}{LVV-T107} & \multicolumn{4}{p{12cm}}{ Verify implementation of Level-1 Production Completeness } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Eric Bellm & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS successfully processes all images of sufficiently
+quality for processing are eventually processed even after connectivity
+failures.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T283}{LVV-T283} & \multicolumn{4}{p{12cm}}{ RAS-00-00: Writing well-formed raw image } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\
+
+\begin{itemize}
+\tightlist
+\item
+  The successful integration of the Pathfinder components with the DM
+  Header Service and the Level 1 Archiver;
+\item
+  That the raw images are well-formed and meet specifications in
+  change-controlled documents \citeds{LSE-61};
+\end{itemize}
+
+~This Test Case shall be repeated for each of the different cameras
+(ATScam, LSSTCam) and sensors (Science, Wavefront, and Guider)
+combination.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T284}{LVV-T284} & \multicolumn{4}{p{12cm}}{ RAS-00-05: (LDM-503-8b) Writing data from CCOB to the DBB for further
+data processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:
+
+\begin{itemize}
+\tightlist
+\item
+  The successful integration of the DAQ archiver components with the
+  CCOB
+\item
+  That the file can then be ingested into the DBB and be retrieved for
+  further analysis
+\end{itemize}
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T286}{LVV-T286} & \multicolumn{4}{p{12cm}}{ RAS-00-20: Raw image are part of the permanent record of survey via DBB } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  That the handoff of a raw image from the Level 1 Archiver Service to
+  the DBB buffer manager is successful;
+\item
+  That the raw image is ingested into the Data Backbone successfully;
+\item
+  That the monitoring of the above items is successful;
+\end{itemize}
+
+This Test Case shall be repeated for each of the different cameras
+(ATScam, LSSTCam) and sensors (Science, Wavefront, and Guider)
+combination.\\[2\baselineskip]Note: For a complete check of the various
+aspects of what it means for a raw image to be in the Data Backbone, see
+the tests for the Data Backbone.
+}
+  
+ \newpage \subsection{[LVV-126] DMS-REQ-0295-V-01: Transparent Data Access }\label{lvv-126}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-126}{LVV-126} &
+Robert Gruendl & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T100 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that a file stored at NCSA can also be obtained from IN2P3 and the
+Chilean DAC. Can be done with test DRP data.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0295 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide an interface that allows
+retrieval by productions or science users of datasets from any Facility
+where they may reside without requiring reconfiguration. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0176 & Data Access \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T100}{LVV-T100} & \multicolumn{4}{p{12cm}}{ Verify implementation of Transparent Data Access } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+\textbf{Test Items\\
+}\\
+Observe dataset retrieval from multiple LSP instances
+}
+  
+ \newpage \subsection{[LVV-128] DMS-REQ-0297-V-01: DMS Initialization Component }\label{lvv-128}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-128}{LVV-128} &
+Leanne Guy & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T146 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that all components of the DMCS (this applies to compute services,
+storage services, and access services) can be initialized properly.
+
+Each component that DM deploys should be tested separately. The list of
+all components that DM deploys is given
+in~\href{http://ls.st/LDM-148}{LDM-148:~Data Management System Design}~.
+The full requirement will pass only when all component level tests
+pass.~
+
+Component List:~\\
+Archiving (Prompt Base)~\\
+Planned Observation Publication (Prompt Base)~\\
+Prompt Processing Ingest (Prompt Base)~\\
+Observatory Operations Data (Prompt Base)~\\
+Observatory Control System (OCS) Driven Batch (Prompt Base)~\\
+Telemetry Gateway (Prompt Base)~\\
+\hspace*{0.333em}\\
+Prompt Processing (Prompt NCSA)~\\
+Alert Distribution (Prompt NCSA)~\\
+Prompt Quality Control (QC) (Prompt NCSA)~\\
+\hspace*{0.333em}\\
+Batch Production (Offline Production, Satellite Facility)~\\
+Offline QC (Offline Production)~\\
+Bulk Distribution (Offline Production)~\\
+\hspace*{0.333em}\\
+LSST Science Platform (all aspects) (Commissioning Cluster and DACs)\\
+\hspace*{0.333em}\\
+Data Backbone (Archive Base and NCSA)~\\
+\hspace*{0.333em}
+
+~
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0297 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall contain a component that, at each
+Center, can initialize the DM Subsystem into a well-defined safe state
+when powered up. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} A safe state is one that does not permit the
+corruption or loss of previously archived data, nor of sending spurious
+information over any interface. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0041 & Subsystem Activation \\
+OSS-REQ-0122 & Provenance \\
+OSS-REQ-0307 & Subsystem Initialization \\
+OSS-REQ-0121 & Open Source, Open Configuration \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T146}{LVV-T146} & \multicolumn{4}{p{12cm}}{ Verify implementation of DMS Initialization Component } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that the DMS can be initialized in a safe state that will
+not allow data corruption/loss.
+}
+  
+ \newpage \subsection{[LVV-131] DMS-REQ-0300-V-01: Bulk Download Service }\label{lvv-131}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-131}{LVV-131} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T138 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Demonstrate that data can be downloaded in bulk. Can be shown within the
+data centre. Better to show that it can be done between NCSA and IN2P3.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0300 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to enable bulk
+download of data products and raw data, subject to network bandwidth. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This includes bulk download of older data releases. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0178 & Data Distribution \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T138}{LVV-T138} & \multicolumn{4}{p{12cm}}{ Verify implementation of Bulk Download Service } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Bulk Download
+}
+  
+ \newpage \subsection{[LVV-133] DMS-REQ-0302-V-01: Production Orchestration }\label{lvv-133}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-133}{LVV-133} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T11 \\
+LVV-T140 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Send simulated or precursor observations to processing system at the
+correct rate and check that the system configures itself properly.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0302 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to orchestrate
+execution of productions, including deploying pipelines on a computing
+platform. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0004 & The Archive Facility \\
+OSS-REQ-0038 & Scope of Control \\
+OSS-REQ-0117 & Automated Production \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} & \multicolumn{4}{p{12cm}}{ DRP-00-05: Execution of the DRP Science Payload by the Batch Production
+Service } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the DRP Science Payload can be executed using
+a specific version of the Batch Production Service provided by the LSST
+Data Facility. Since the outputs are stored in the Data Backbone, it too
+is a component of this test.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140} & \multicolumn{4}{p{12cm}}{ Verify implementation of Production Orchestration } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate use to orchestration software to perform real-time and batch
+production on LSST compute platform(s).
+}
+  
+ \newpage \subsection{[LVV-134] DMS-REQ-0303-V-01: Production Monitoring }\label{lvv-134}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-134}{LVV-134} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T11 \\
+LVV-T141 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+For test in DMS-REQ-0302 verify that status GUI functions as expected.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0303 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to monitor
+execution of pipelines in real time. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0004 & The Archive Facility \\
+OSS-REQ-0038 & Scope of Control \\
+OSS-REQ-0034 & System Control \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} & \multicolumn{4}{p{12cm}}{ DRP-00-05: Execution of the DRP Science Payload by the Batch Production
+Service } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the DRP Science Payload can be executed using
+a specific version of the Batch Production Service provided by the LSST
+Data Facility. Since the outputs are stored in the Data Backbone, it too
+is a component of this test.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T141}{LVV-T141} & \multicolumn{4}{p{12cm}}{ Verify implementation of Production Monitoring } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate monitoring capabilities that give real-time view of pipeline
+execution and production systems usage/load.
+}
+  
+ \newpage \subsection{[LVV-135] DMS-REQ-0304-V-01: Production Fault Tolerance }\label{lvv-135}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-135}{LVV-135} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T142 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+For test in DMS-REQ-0302 introduce a ``Chaos monkey'' to randomly take
+down processing nodes (including coordinator). Check that system
+recovers on its own.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0304 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to detect faults
+in pipeline execution and recover when possible. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0117 & Automated Production \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T142}{LVV-T142} & \multicolumn{4}{p{12cm}}{ Verify implementation of Production Fault Tolerance } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate production systems report faults in pipeline executions and
+that system is able to recover. ~Where recovery can mean the ability to
+provide production artifacts for examination, return production elements
+ready for subsequent use, and/or reset and repeat production attempts.
+}
+  
+ \newpage \subsection{[LVV-136] DMS-REQ-0305-V-01: Task Specification }\label{lvv-136}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-136}{LVV-136} &
+Robert Lupton & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T11 \\
+LVV-T144 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that task code is configurable and can consist of multiple subtasks
+chained together.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0305 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to define (and
+redefine without recompilation) a pipeline task containing a science
+algorithm, which may in turn consist of the execution of other subtasks. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0122 & Provenance \\
+OSS-REQ-0121 & Open Source, Open Configuration \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} & \multicolumn{4}{p{12cm}}{ DRP-00-05: Execution of the DRP Science Payload by the Batch Production
+Service } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the DRP Science Payload can be executed using
+a specific version of the Batch Production Service provided by the LSST
+Data Facility. Since the outputs are stored in the Data Backbone, it too
+is a component of this test.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T144}{LVV-T144} & \multicolumn{4}{p{12cm}}{ Verify implementation of Task Specification } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS provides the ability to define a new or modified
+pipeline task without recompilation.
+}
+  
+ \newpage \subsection{[LVV-137] DMS-REQ-0306-V-01: Task Configuration }\label{lvv-137}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-137}{LVV-137} &
+Robert Lupton & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T11 \\
+LVV-T145 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Configurations are tested as they are loaded. Show that the
+configuration system passes unit tests.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0306 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide software to define,
+override components of, and verify the suitability of the configuration
+for a task. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0122 & Provenance \\
+OSS-REQ-0121 & Open Source, Open Configuration \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} & \multicolumn{4}{p{12cm}}{ DRP-00-05: Execution of the DRP Science Payload by the Batch Production
+Service } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the DRP Science Payload can be executed using
+a specific version of the Batch Production Service provided by the LSST
+Data Facility. Since the outputs are stored in the Data Backbone, it too
+is a component of this test.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T145}{LVV-T145} & \multicolumn{4}{p{12cm}}{ Verify implementation of Task Configuration } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Lupton & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS software provides configuration control to define,
+override, and verify the configuration for a DMS Task.
+}
+  
+ \newpage \subsection{[LVV-140] DMS-REQ-0309-V-01: Raw Data Archiving Reliability }\label{lvv-140}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-140}{LVV-140} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T154 \\
+LVV-T287 \\
+LVV-T454 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Simulated DAQ. Send data to archiver. Ensure that no data are lost. For
+a short test we should never lose data. Verify that all data are
+present. No timescale for that specified. Can not check data corruption
+rates so must do so by inspection of networking and archiving systems.
+DAQ does not send checksums so we can never guaranteee that the archived
+data matched the camera readout. We can use checksums to verify that the
+data have not changed since we received it.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0309 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS system shall archive all data, including
+science, wavefront, and guider images and associated metadata, that are
+presented for archiving by up-stream systems, with a rate of permanent
+data loss or corruption not to exceed \textbf{dataLossMax}. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{dataLossMax = 1.0e-5{{[}float{]}}} Maximum fraction of raw
+images that are permitted to be permanently lost or corrupted, including
+the loss or corruption of essential associated metadata, once acquired
+by the DMS. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} Data ``presented for archiving'' means data that
+have been successfully transferred from upstream systems to DMS, and
+that are intended for permanent archiving. Data obtained for diagnostic
+and other limited-use engineering purposes are specifically excluded
+from this requirement. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0111 & Science Image Archiving Reliability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T154}{LVV-T154} & \multicolumn{4}{p{12cm}}{ Verify implementation of Raw Data Archiving Reliability } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Colin Slater & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that raw images are reliably archived.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T454}{LVV-T454} & \multicolumn{4}{p{12cm}}{ LDM-503-8 Enable LSP viewing of spectrograph data. } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Gower & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+\begin{itemize}
+\tightlist
+\item
+  Acquire spectrograph image data, transfer that data to NCSA, ingest
+  data into a Butler (G2 or G3 when available), and enable viewing of
+  data on LSP. ~
+\end{itemize}
+}
+  
+ \newpage \subsection{[LVV-141] DMS-REQ-0310-V-01: Un-Archived Data Product Cache }\label{lvv-141}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-141}{LVV-141} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T155 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+For the earlier test of L1 processing system with mulitple epochs,
+verify that (1) unarchived products are persisted and (2) they are found
+during precovery.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0310 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS shall provide low-latency storage for
+un-archived data products of at least \textbf{l1CacheLifetime} to enable
+efficient precovery and other Level-1 production measurements. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{l1CacheLifetime = 30{{[}day{]}}} Lifetime in the cache of
+un-archived Level-1 data products. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0130 & Catalogs (Level 1) \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T155}{LVV-T155} & \multicolumn{4}{p{12cm}}{ Verify implementation of Un-Archived Data Product Cache } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that the DMS provides low-latency storage for at least
+I1CacheLifetime (30 days) to keep prompt processing pre-covery images on
+hand.
+}
+  
+ \newpage \subsection{[LVV-145] DMS-REQ-0314-V-01: Compute Platform Heterogeneity }\label{lvv-145}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-145}{LVV-145} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T179 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Run L1 demonstration tests on a cluster that is made up of different
+hardware configurations (at least 2). The operating systems running the
+processing (from VMs?) can differ. Show document containing minimum
+hardware specification.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0314 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} At any given LSST computational facility the DMS
+shall be capable of operations on a heterogeneous cluster of machines.
+The hardware, operating system, and other machine parameters shall be
+limited to a project-approved set. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The necessity of replacing hardware throughout the
+course of the survey essentially guarantees heterogeneity within a
+cluster. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0177 & Data Access Environment \\
+OSS-REQ-0124 & Software Development Standards \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T179}{LVV-T179} & \multicolumn{4}{p{12cm}}{ Verify implementation of Compute Platform Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate that production results are the same (within machine
+accuracy) when production occurs on different platforms (OS, kernel,
+hardware provisioning).
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-146] DMS-REQ-0315-V-01: DMS Communication with OCS }\label{lvv-146}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-146}{LVV-146} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T183 \\
+LVV-T283 \\
+LVV-T284 \\
+LVV-T1549 \\
+LVV-T1556 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that a component exists and that it can communicate with the OCS at
+the (simulated) summit.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0315 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The DMS at the Base Site shall contain a
+component to accept control commands from and communicate with the OCS. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0003 & The Base Facility \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T183}{LVV-T183} & \multicolumn{4}{p{12cm}}{ Verify implementation of DMS Communication with OCS } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Gregory Dubois-Felsmann & Defined & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the DMS at the Base Facility can receive commands from the
+OCS and send command responses, events, and telemetry back. ~Verified by
+Early Integration activities and during AuxTel commissioning.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T283}{LVV-T283} & \multicolumn{4}{p{12cm}}{ RAS-00-00: Writing well-formed raw image } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\
+
+\begin{itemize}
+\tightlist
+\item
+  The successful integration of the Pathfinder components with the DM
+  Header Service and the Level 1 Archiver;
+\item
+  That the raw images are well-formed and meet specifications in
+  change-controlled documents \citeds{LSE-61};
+\end{itemize}
+
+~This Test Case shall be repeated for each of the different cameras
+(ATScam, LSSTCam) and sensors (Science, Wavefront, and Guider)
+combination.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T284}{LVV-T284} & \multicolumn{4}{p{12cm}}{ RAS-00-05: (LDM-503-8b) Writing data from CCOB to the DBB for further
+data processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:
+
+\begin{itemize}
+\tightlist
+\item
+  The successful integration of the DAQ archiver components with the
+  CCOB
+\item
+  That the file can then be ingested into the DBB and be retrieved for
+  further analysis
+\end{itemize}
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1549}{LVV-T1549} & \multicolumn{4}{p{12cm}}{ LDM-503-6 Comcam verification readiness } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Draft & 1 & false & Demonstration \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that Comcam has all the services running and verified working for
+retrieving an image from the comcam DAQ and store it on file systems at
+the LDF for viewing by LSP. ~
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1556}{LVV-T1556} & \multicolumn{4}{p{12cm}}{ LDM-503-10B Large Scale CCOB Data Access } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Draft & 1 & false & Demonstration \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate the ability to transfer data from the SLAC test stand or
+CCOB with 21 rafts from SLAC and ingested at NCSA and make available
+through an instance of the LSP
+}
+  
+ \newpage \subsection{[LVV-147] DMS-REQ-0316-V-01: Commissioning Cluster }\label{lvv-147}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-147}{LVV-147} &
+Robert Gruendl & Not Covered & 1a &
+\begin{tabular}{c}
+LVV-T191 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Show that the SE commissioning cluster exists. Check the budget spent on
+it and compare with AP budget. Verify that DM are not supporting the
+installation.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0316 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Base Facility shall include a compute
+cluster to be made available to the Systems Engineering group for use in
+commissioning. Data Management will not administer or otherwise maintain
+this cluster following hardware installation. The budget for this
+cluster shall be at least \textbf{budgetRelAlertProd} of the budget for
+Alert Production hardware. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{budgetRelAlertProd = 10{{[}percent{]}}} Budget relative to the
+cost of the Alert Production system. \\ \cdashline{1-2}
+Requirement Priority & 1a \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T191}{LVV-T191} & \multicolumn{4}{p{12cm}}{ Verify implementation of Commissioning Cluster } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the Commissioning Cluster has sufficient Compute/Storage/LAN
+at the Base Facility to support Commissioning.
+}
+  
+ \newpage \subsection{[LVV-149] DMS-REQ-0318-V-01: Data Management Unscheduled Downtime }\label{lvv-149}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-149}{LVV-149} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T180 \\
+LVV-T287 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Identify likely hardware failures and identify mitigations to minimize
+downtime caused by those failures. If the failure is critical
+infrastructure at NCSA, show that we can redirect data backbone
+archiving to IN2P3.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0318 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Data Management subsystem shall be designed
+to facilitate unplanned repair activities expected not to exceed
+\textbf{DMDowntime} days per year. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{DMDowntime = 1{{[}day{]}}} Unplanned downtime per year. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This requirement does not apply to DM's alert
+publication and other data processing and user-interaction
+functionality, but only to failures in DM that directly prevent the
+collection of survey data. The reference case would be a failure of
+communication or archiving that lasted longer than the capacity of the
+Summit buffer -- i.e., an 11-day outage would exceed the nominal buffer
+capacity by one day and therefore use up the proposed allocation.\\
+\hspace*{0.333em}\\
+This requirement does not invoke the need to verify by reliability
+analysis. Verification is by analysis that identifies likely hardware
+failures and identifies mitigations to minimize downtime caused by those
+failures. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0373 & Unscheduled Downtime Subsystem Allocations \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T180}{LVV-T180} & \multicolumn{4}{p{12cm}}{ Verify implementation of Data Management Unscheduled Downtime } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This applies only to downtime that would prevent the collection of
+survey data. ~Verification means that analysis has occurred to identify
+likely hardware failures that would prevent survey operations and that
+mitigations that minimize the downtime to less than DMDowntime (1
+day/year) are in place. ~Known systems that fall in this category
+include: Image and EFD Archiving, Observatory Operations Data, Telemetry
+Gateway, Data Backbone, Managed Database, Inter-Site Networks, and
+Service Management and Monitoring.~
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T287}{LVV-T287} & \multicolumn{4}{p{12cm}}{ RAS-00-30: Raw Image Archiving Availability, Throughput, Reliability,
+and Heterogeneity } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Michelle Butler & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Raw Image Archiving meets availability requirements;
+\item
+  Raw Image Archiving meets throughput requirements;
+\item
+  Raw Image Archiving meets reliability requirements;
+\item
+  Raw Image Archiving meets heterogeneity requirements;
+\end{itemize}
+
+This test case need to be completed when more information is available.
+}
+  
+ \newpage \subsection{[LVV-153] DMS-REQ-0322-V-01: Special Programs Database }\label{lvv-153}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-153}{LVV-153} &
+Melissa Graham & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T94 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Process some special program simulated data and demonstrate that the
+products appear in distinct databases.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0322 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Data products for special programs shall be
+stored in databases that are distinct from those used to store standard
+Level 1 and Level 2 data products. It shall be possible for these
+databases to be federated with the Level 1 and Level 2 databases to
+allow cross-queries and joins. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0392 & Data Products Handling for Special Programs \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T94}{LVV-T94} & \multicolumn{4}{p{12cm}}{ Verify implementation of Special Programs Database } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Melissa Graham & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+To confirm that data products from Special Programs are based solely on
+images obtained as part of SP via, e.g., metadata queries. To confirm
+that the SP data products can be joined to Prompt and DRP products by
+attempting to do so via, e.g., coordinate table joins, and attempting to
+e.g., find the faint counterparts in a Deep Drilling stack to variables
+with no Object detections in the DRP coadds.
+}
+  
+ \newpage \subsection{[LVV-165] DMS-REQ-0334-V-01: Persisting Data Products }\label{lvv-165}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} &
+Colin Slater & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T12 \\
+LVV-T13 \\
+LVV-T14 \\
+LVV-T15 \\
+LVV-T16 \\
+LVV-T78 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Produce some relevant coadds and store them in the Archive. Examine the
+data retention policies for those products.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0334 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} All per-band deep coadds and best seeing coadds
+shall be kept indefinitely and made available to users. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This requirement is intended to list all the data
+products that must be archived rather than regenerated on demand.
+DMS-REQ-0069 indicates in discussion that Processed Visit Images are not
+archived. DMS-REQ-0010 indicates in the discussion that Difference
+Exposures are not archived.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0136 & Co-added Exposures \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+\subsubsection{Verified By}
+\begin{itemize}
+\item . DM-9953 (\ref{dm-9953}) Pixels rejected from coaddition and CCD are not masked on coadds
+\item . DM-13058 (\ref{dm-13058}) Inconsistent aperture corrections in W44 reprocessing of HSC RC1
+\end{itemize}
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T12}{LVV-T12} & \multicolumn{4}{p{12cm}}{ DRP-00-10: Data Release Includes Required Data Products } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the basic data products which should be in an
+data release are generated by execution of the science payload.\\
+These products will include:
+
+\begin{itemize}
+\tightlist
+\item
+  Source catalogs, derived from PVIs and coadded images (DMS-REQ-0267 \&
+  DMS-REQ-0277);
+\item
+  Forced source catalogs (DMS-REQ-0268);
+\item
+  Object catalogs (DMS-REQ-0275);
+\item
+  Processed visit images (PVIs; DMS-REQ-0069);
+\item
+  Coadded images (DMS-REQ-0279);
+\end{itemize}
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T13}{LVV-T13} & \multicolumn{4}{p{12cm}}{ DRP-00-15: Scientific Verification of Source Catalog } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the source catalogs delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  Derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);
+\item
+  Aperture corrections for different photometry algorithms are
+  consistent.
+\item
+  Photometry measurements are consistent with reference catalog
+  photometry (including sources not used in photometric calibration).
+\item
+  Astrometry measurements are consistent with reference catalog
+  positions (including sources not used in astrometric calibration).
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead require for each test that we be able to quickly
+construct a plot in which such a target can be visualized.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T14}{LVV-T14} & \multicolumn{4}{p{12cm}}{ DRP-00-25: Scientific Verification of Object Catalog } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the object catalogs delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  Derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);
+\item
+  Aperture corrections for different photometry algorithms are
+  consistent.
+\item
+  PSF models correctly predict the ellipticities of stars over each
+  tract.
+\item
+  Photometry measurements are consistent with reference catalog
+  photometry (including sources not used in photometric calibration).
+\item
+  Astrometry measurements are consistent with reference catalog
+  positions (including sources not used in astrometric calibration).
+\item
+  Forced and unforced photometry measurements are consistent.
+\item
+  The slope of the stellar locus in color-color space is not a function
+  of position on the sky.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead re- quire for each test that we be able to quickly
+construct a plot in which such a target can be visualized.\\
+All science quality tests in this section shall distinguish between
+blended and isolated objects.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T15}{LVV-T15} & \multicolumn{4}{p{12cm}}{ DRP-00-30: Scientific Verification of Processed Visit Images } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the Processed Visit Images (PVIs) delivered by
+the DRP science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Processed visit images have been generated and persisted during
+  payload execution;
+\item
+  Each PVI includes a background model (DMS-REQ-0327), photometric
+  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
+  WCS (DMS-REQ-0030).
+\item
+  Saturated pixels are correctly masked.
+\item
+  Pixels affected by cosmic rays are correctly masked.
+\item
+  The background is not oversubtracted around bright objects.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead re- quire for each test that we be able to quickly
+construct a plot or display summary images that allow such a target can
+be visualized.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16} & \multicolumn{4}{p{12cm}}{ DRP-00-35: Scientific Verification of Coadd Images } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jim Bosch & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that the coadded images delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Coadds have been generated and persisted during payload execution;~
+\item
+  Each coadd provides a spatially varying PSF model (DMS-REQ-0047).
+\item
+  Saturated pixels are correctly masked.
+\item
+  Pixels affected by satellite trails and ghosts are rejected from the
+  coadd.
+\item
+  The background is not oversubtracted around bright objects.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead require for each test that we be able to quickly
+construct a plot or display summary images that allow such a target can
+be visualized.\\[2\baselineskip]
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T78}{LVV-T78} & \multicolumn{4}{p{12cm}}{ Verify implementation of Persisting Data Products } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that per-band deep coadds and best-seeing coadds are present,
+kept, and available.
+}
+  
+ \newpage \subsection{[LVV-176] DMS-REQ-0345-V-01: Logging of catalog queries }\label{lvv-176}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-176}{LVV-176} &
+Colin Slater & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T161 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Do some queries as different users. Examine the log and show that the
+correct information is present.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0345 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Every query of LSST databases shall be logged.
+The logging shall contain at least the query itself, the user who
+submitted the query, the date and time the query was submitted, the
+execution time of the query, and the number of rows returned. The query
+history shall be available to the user that made the query but shall
+otherwise be private and only accessible by administrators. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The logs can be used for auditing in case of a
+dispute regarding data release timing. They can also be used by the data
+access team to learn the usage patterns of the system (such as the times
+of day/month with high load, or the most popular queries) and provide
+statistics for focusing on future developments and improvements of LSST.
+Whilst queries are private by default, in conjunction with DMS-REQ-0291,
+it would be desirable for a query to be published and associated with a
+DOI. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0134 & Level 2 Data Product Availability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T161}{LVV-T161} & \multicolumn{4}{p{12cm}}{ Verify implementation of Logging of catalog queries } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate logging of queries of LSST databases. ~Logged queries are
+globally available to DB administrators but otherwise private excepting
+the user that made the query.
+}
+  
+ \newpage \subsection{[LVV-185] DMS-REQ-0354-V-01: Result latency for high-volume complex queries }\label{lvv-185}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-185}{LVV-185} &
+Robert Gruendl & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T1086 \\
+LVV-T1087 \\
+LVV-T1088 \\
+LVV-T1089 \\
+LVV-T1090 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Run the required number of queries and confirm that they respond within
+the allotted time.
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0354 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} Complex high-volume queries --- queries that
+involve full-sky spatial and temporal correlations -- shall be answered
+in less than \textbf{hvComplexQueryTime}. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{hvComplexQueryTime = 12{{[}hour{]}}} Maximum time allowed for
+retrieving results of a high-volume complex query. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This can include the ForcedSource and Object\_Extra
+tables. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0181 & Data Products Query and Download Infrastructure \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1086}{LVV-T1086} & \multicolumn{4}{p{12cm}}{ Full Table Scans Functional Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+The objective of this test is to ensure that the full table scan queries
+are performing as expected and establish a timing baseline benchmark for
+these types of queries.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1087}{LVV-T1087} & \multicolumn{4}{p{12cm}}{ Full Table Joins Functional Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+The objective of this test is to ensure that the full table join queries
+are performing as expected and establish a timing baseline benchmark for
+these types of queries.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1088}{LVV-T1088} & \multicolumn{4}{p{12cm}}{ Concurrent Scans Scaling Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will show that average completion-time of full-scan queries of
+the Object catalog table grows sub-linearly with respect to the number
+of simultaneously active full-scan queries, within the limits of machine
+resource exhaustion.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1089}{LVV-T1089} & \multicolumn{4}{p{12cm}}{ Load Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that Qserv is able to meet average query completion
+time targets per query class under a representative load of simultaneous
+high and low volume queries while running against an appropriately
+scaled test catalog.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1090}{LVV-T1090} & \multicolumn{4}{p{12cm}}{ Heavy Load Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that Qserv is able to meet average query completion
+time targets per query class under a higher than average load of
+simultaneous high and low volume queries while running against an
+appropriately scaled test catalog.
+}
+  
+ \newpage \subsection{[LVV-188] DMS-REQ-0357-V-01: Result latency for high-volume full-sky queries on
+the Object table }\label{lvv-188}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-188}{LVV-188} &
+Colin Slater & Not Covered & 1b &
+\begin{tabular}{c}
+LVV-T1086 \\
+LVV-T1088 \\
+LVV-T1089 \\
+LVV-T1090 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+tbc
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0357 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} High-volume queries on the Object table --
+queries that involve full-sky scans -- shall be answered in
+\textbf{hvObjectQueryTime}. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{hvObjectQueryTime = 1{{[}hour{]}}} Maximum time allowed for
+retrieving results of a high-volume query of the Object table. \\ \cdashline{1-2}
+Requirement Priority & 1b \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0181 & Data Products Query and Download Infrastructure \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1086}{LVV-T1086} & \multicolumn{4}{p{12cm}}{ Full Table Scans Functional Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+The objective of this test is to ensure that the full table scan queries
+are performing as expected and establish a timing baseline benchmark for
+these types of queries.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1088}{LVV-T1088} & \multicolumn{4}{p{12cm}}{ Concurrent Scans Scaling Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will show that average completion-time of full-scan queries of
+the Object catalog table grows sub-linearly with respect to the number
+of simultaneously active full-scan queries, within the limits of machine
+resource exhaustion.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1089}{LVV-T1089} & \multicolumn{4}{p{12cm}}{ Load Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that Qserv is able to meet average query completion
+time targets per query class under a representative load of simultaneous
+high and low volume queries while running against an appropriately
+scaled test catalog.
+}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1090}{LVV-T1090} & \multicolumn{4}{p{12cm}}{ Heavy Load Test } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Fritz Mueller & Approved & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+This test will check that Qserv is able to meet average query completion
+time targets per query class under a higher than average load of
+simultaneous high and low volume queries while running against an
+appropriately scaled test catalog.
+}
+  
+ \newpage \subsection{[LVV-189] DMS-REQ-0363-V-01: Access to Previous Data Releases }\label{lvv-189}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-189}{LVV-189} &
+Robert Gruendl & Not Covered & 3 &
+\begin{tabular}{c}
+LVV-T162 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+tbc
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0363 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The LSST Project shall provide data access
+services for the current Level 1 data, the most recent \textbf{nDRMin}
+Data Releases, and multiple older Data Releases. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{nDRMin = 2{{[}integer{]}}} Minimum number of recent data
+releases \\ \cdashline{1-2}
+Requirement Priority & 3 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0186 & Access to Previous Data Releases \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T162}{LVV-T162} & \multicolumn{4}{p{12cm}}{ Verify implementation of Access to Previous Data Releases } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Gregory Dubois-Felsmann & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify this high-level requirement, which states that the other data
+access requirements, for images and catalogs, all must be satisfied for
+multiple data releases. ~Verified by inspection, i.e., by determining
+that the data access system components, from middleware through APIs to
+user interfaces, are designed to support data from multiple releases, as
+well as by direct testing using a synthetic test environment containing
+multiple releases.\\
+(Involves: Data Backbone, Managed Database, LSP Portal, LSP JupyterLab,
+LSP Web APIs, Parallel Distributed Database)
+}
+  
+ \newpage \subsection{[LVV-193] DMS-REQ-0367-V-01: Access Services Performance }\label{lvv-193}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-193}{LVV-193} &
+Colin Slater & Not Covered & 2 &
+\begin{tabular}{c}
+LVV-T166 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+tbc
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0367 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The data access services for the most recent
+\textbf{nDRMin} Data Releases shall meet the performance requirements
+set forth in OSS-REQ-0180 and OSS-REQ-0181. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{nDRMin = 2{{[}integer{]}}} Minimum number of recent data
+releases \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0394 & Access Services Performance \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T166}{LVV-T166} & \multicolumn{4}{p{12cm}}{ Verify implementation of Access Services Performance } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Robert Gruendl & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Demonstrate monitoring of Data Access Services that give real and
+long-time views of system performance and usage.
+}
+  
+ \newpage \subsection{[LVV-4741] CA-DM-DAQ-ICD-0058-V-03: Image Data Format\_DM\_3 }\label{lvv-4741}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-4741}{LVV-4741} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & CA-DM-DAQ-ICD-0058 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} ~The camera shall document and implement a class
+interface representing the structure of the data provided to image data
+consumers. This shall include the image pixel data and the structural
+metadata. \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-4742] CA-DM-DAQ-ICD-0058-V-04: Image Data Format\_DM\_4 }\label{lvv-4742}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-4742}{LVV-4742} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & CA-DM-DAQ-ICD-0058 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} ~The camera shall document and implement a class
+interface representing the structure of the data provided to image data
+consumers. This shall include the image pixel data and the structural
+metadata. \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-4783] CA-DM-DAQ-ICD-0092-V-03: Maximum number of simultaneous clients\_DM\_3 }\label{lvv-4783}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-4783}{LVV-4783} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & CA-DM-DAQ-ICD-0092 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Camera shall support simultaneous access to
+the image store by at least four privileged consumers, each of which may
+consist of multiple nodes retrieving, in combination, up to one focal
+plane's worth of image data, for which its performance guarantees (for
+latency and throughput) are met. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion}: The value specified is believed to meet both the
+requirements of Data Management and the requirements of the Observatory
+for access to images for display and diagnostic purposes. The Camera may
+support additional non-privileged consumers, but without any performance
+guarantees for them. \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-5507] OCS-DM-COM-ICD-0026-V-01: Engineering and Facilities Database Archiving
+by Data Management\_DM\_1 }\label{lvv-5507}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-5507}{LVV-5507} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & OCS-DM-COM-ICD-0026 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+physically separated copies of the Transformed EFD.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion}: Data Management performs the archiving continuously
+as long as the EFD Transformation Service CSC is in the ``enabled''
+state. If the EFD Transformation CSC is disabled, transformation and
+archiving will resume and catch up when it is enabled.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-5508] OCS-DM-COM-ICD-0026-V-02: Engineering and Facilities Database Archiving
+by Data Management\_DM\_2 }\label{lvv-5508}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-5508}{LVV-5508} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & OCS-DM-COM-ICD-0026 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+physically separated copies of the Transformed EFD.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion}: Data Management performs the archiving continuously
+as long as the EFD Transformation Service CSC is in the ``enabled''
+state. If the EFD Transformation CSC is disabled, transformation and
+archiving will resume and catch up when it is enabled.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-5525] OCS-DM-COM-ICD-0027-V-01: Multiple Physically Separated Copies\_DM\_1 }\label{lvv-5525}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-5525}{LVV-5525} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & OCS-DM-COM-ICD-0027 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+physically separated copies of the Transformed EFD.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-5526] OCS-DM-COM-ICD-0027-V-02: Multiple Physically Separated Copies\_DM\_2 }\label{lvv-5526}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-5526}{LVV-5526} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & OCS-DM-COM-ICD-0027 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+physically separated copies of the Transformed EFD.\\
+\hspace*{0.333em} \\ \cdashline{1-2}
+Requirement Priority &  \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-18297] DMS-REQ-0391-V-01: Alert Stream Distribution nStreams }\label{lvv-18297}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18297}{LVV-18297} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+LVV-T1867 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+This VE satisfies the requirement on numStreams=5. The related VE
+\href{https://jira.lsstcorp.org/browse/LVV-18911}{LV-18911} pertains to
+the latency (OTT1).
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0391 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} LSST shall be capable of supporting the
+transmission of at least \textbf{numStreams} full alert streams out of
+the alert distribution system within \textbf{OTT1}. \\ \cdashline{1-2}
+Requirement Parameters & {[}\textbf{numStreams = 5{{[}integer{]}}} The minimum number of full
+streams that can be transmitted out of the alert distribution system.,
+\textbf{OTT1 = 1{{[}minute{]}}} The latency of reporting optical
+transients following the completion of readout of the last image of a
+visit{]} \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This requirement establishes the minimum capacity
+needed for timely transmission of alerts to community brokers. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0184 & Transient Alert Publication \\
+OSS-REQ-0127 & Level 1 Data Product Availability \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1867}{LVV-T1867} & \multicolumn{4}{p{12cm}}{ Verify implementation of at least numStreams alert streams supported } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeffrey Carlin & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that the LSST system supports the transmission of at least
+\textbf{numStreams=5} full alert streams out of the alert distribution
+system within \textbf{OTT1=1 minute}.~
+}
+  
+ \newpage \subsection{[LVV-18841] DMS-REQ-0396-V-01: Data Products Processing Infrastructure\_1 }\label{lvv-18841}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18841}{LVV-18841} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0396 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} The Data Management System shall provide at
+least a fraction \textbf{userComputingFraction} of its total capability
+for user-dedicated processing and user-dedicated storage, including for
+the generation of Level 3 data products. \\ \cdashline{1-2}
+Requirement Parameters & \textbf{userComputingFraction = 10{{[}percent{]}}} Fraction of total
+computing capacity dedicated to user-defined processing and storage \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} This allocation does not include the resources
+needed to support the expected load of queries against the catalog
+database. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0179 & Data Products Processing Infrastructure \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+  
+ \newpage \subsection{[LVV-18847] DMS-REQ-0397-V-01: Prompt/DR Processing of Data from Special Programs\_1 }\label{lvv-18847}
+
+\begin{longtable}{ccccc}
+\hline
+\textbf{Jira Link} & \textbf{Assignee} & \textbf{Status} & \textbf{Priority} & \textbf{Test Cases}\\ \hline
+\href{https://jira.lsstcorp.org/browse/LVV-18847}{LVV-18847} &
+Leanne Guy & Not Covered & Undefined &
+\begin{tabular}{c}
+LVV-T1863 \\
+\end{tabular}
+\\
+\hline
+\end{longtable}
+
+\textbf{Verification Element Description:} \\
+Undefined
+
+{\footnotesize
+\begin{longtable}{p{3cm}p{13cm}}
+\hline
+\multicolumn{2}{c}{\textbf{Upstream Requirements}}\\ \hline
+Requirement ID & DMS-REQ-0397 \\ \cdashline{1-2}
+Requirement Description & \textbf{Specification:} It shall be possible for special programs data
+to be processed with the prompt- and/or annual-release pipelines
+alongside data from the main survey. \\ \cdashline{1-2}
+Requirement Discussion & \textbf{Discussion:} The data from Special Programs should only be
+included in the prompt- and/or annual-release processing along with data
+from the wide-fast-deep main survey when it is (a) possible for DM to do
+so without additional effort and (b) beneficial to the LSST's main
+science objectives. Decisions about which data are included in the
+Prompt/DR processing pipelines are applied to which Special Programs
+will be made by the Operations team, after consideration of the
+scientific goals, computational resources, and data rights policy. \\ \cdashline{1-2}
+Requirement Priority & 2 \\ \cdashline{1-2}
+Upper Level Requirement &
+\begin{tabular}{cl}
+OSS-REQ-0392 & Data Products Handling for Special Programs \\
+\end{tabular}
+\\ \hline
+\end{longtable}
+}
+
+
+\subsubsection{Test Cases Summary}
+\begin{longtable}{p{3cm}p{2.5cm}p{2.5cm}p{3cm}p{4cm}}
+\toprule
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1863}{LVV-T1863} & \multicolumn{4}{p{12cm}}{ Verify ability to process Special Programs data alongside normal
+processing } \\ \hline
+\textbf{Owner} & \textbf{Status} & \textbf{Version} & \textbf{Critical Event} & \textbf{Verification Type} \\ \hline
+Jeffrey Carlin & Draft & 1 & false & Test \\ \hline
+\end{longtable}
+{\scriptsize
+\textbf{Objective:}\\
+Verify that Special Programs data can be processed alongside either
+prompt-products or data-release processing with little or no extra
+effort by DM staff.
+}
+  
+
+\newpage
+\appendix
+\section{Traceability}
+\label{sec:trace}
+
+\begin{longtable}{ccc}
+\hline
+\textbf{Requirements} & \textbf{Verification Elements} & \textbf{Test Cases} \\ \hline
+ DMS-REQ-0008  &
+ LVV-5  &
+LVV-T171 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0089  &
+ LVV-36  &
+LVV-T102 \\
+\hline
+ DMS-REQ-0098  &
+ LVV-40  &
+LVV-T104 \\
+\hline
+ DMS-REQ-0100  &
+ LVV-42  &
+LVV-T105 \\
+\hline
+ DMS-REQ-0102  &
+ LVV-44  &
+LVV-T153 \\
+\hline
+ DMS-REQ-0125  &
+ LVV-53  &
+LVV-T120 \\
+\hline
+ DMS-REQ-0126  &
+ LVV-54  &
+LVV-T207 \\
+\hline
+ DMS-REQ-0128  &
+ LVV-56  &
+LVV-T121 \\
+\hline
+ DMS-REQ-0162  &
+ LVV-65  &
+LVV-T173 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0163  &
+ LVV-66  &
+LVV-T174 \\
+\hline
+ DMS-REQ-0164  &
+ LVV-67  &
+LVV-T175 \\
+\hline
+ DMS-REQ-0165  &
+ LVV-68  &
+LVV-T176 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0166  &
+ LVV-69  &
+LVV-T177 \\
+\hline
+ DMS-REQ-0167  &
+ LVV-70  &
+LVV-T178 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0170  &
+ LVV-72  &
+LVV-T182 \\
+\hline
+ DMS-REQ-0176  &
+ LVV-78  &
+LVV-T189 \\
+\hline
+ DMS-REQ-0178  &
+ LVV-80  &
+LVV-T190 \\
+\hline
+ DMS-REQ-0185  &
+ LVV-85  &
+LVV-T197 \\
+\hline
+ DMS-REQ-0186  &
+ LVV-86  &
+LVV-T198 \\
+\hline
+ DMS-REQ-0187  &
+ LVV-87  &
+LVV-T199 \\
+\hline
+ DMS-REQ-0193  &
+ LVV-92  &
+LVV-T209 \\
+\hline
+ DMS-REQ-0194  &
+ LVV-93  &
+LVV-T210 \\
+\hline
+ DMS-REQ-0196  &
+ LVV-94  &
+LVV-T211 \\
+\hline
+ DMS-REQ-0197  &
+ LVV-95  &
+LVV-T212 \\
+\hline
+ DMS-REQ-0284  &
+ LVV-115  &
+LVV-T107 \\
+ &
+ &
+LVV-T283 \\
+ &
+ &
+LVV-T284 \\
+ &
+ &
+LVV-T286 \\
+\hline
+ DMS-REQ-0295  &
+ LVV-126  &
+LVV-T100 \\
+\hline
+ DMS-REQ-0297  &
+ LVV-128  &
+LVV-T146 \\
+\hline
+ DMS-REQ-0300  &
+ LVV-131  &
+LVV-T138 \\
+\hline
+ DMS-REQ-0302  &
+ LVV-133  &
+LVV-T11 \\
+ &
+ &
+LVV-T140 \\
+\hline
+ DMS-REQ-0303  &
+ LVV-134  &
+LVV-T11 \\
+ &
+ &
+LVV-T141 \\
+\hline
+ DMS-REQ-0304  &
+ LVV-135  &
+LVV-T142 \\
+\hline
+ DMS-REQ-0305  &
+ LVV-136  &
+LVV-T11 \\
+ &
+ &
+LVV-T144 \\
+\hline
+ DMS-REQ-0306  &
+ LVV-137  &
+LVV-T11 \\
+ &
+ &
+LVV-T145 \\
+\hline
+ DMS-REQ-0309  &
+ LVV-140  &
+LVV-T154 \\
+ &
+ &
+LVV-T287 \\
+ &
+ &
+LVV-T454 \\
+\hline
+ DMS-REQ-0310  &
+ LVV-141  &
+LVV-T155 \\
+\hline
+ DMS-REQ-0314  &
+ LVV-145  &
+LVV-T179 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0315  &
+ LVV-146  &
+LVV-T183 \\
+ &
+ &
+LVV-T283 \\
+ &
+ &
+LVV-T284 \\
+ &
+ &
+LVV-T1549 \\
+ &
+ &
+LVV-T1556 \\
+\hline
+ DMS-REQ-0316  &
+ LVV-147  &
+LVV-T191 \\
+\hline
+ DMS-REQ-0318  &
+ LVV-149  &
+LVV-T180 \\
+ &
+ &
+LVV-T287 \\
+\hline
+ DMS-REQ-0322  &
+ LVV-153  &
+LVV-T94 \\
+\hline
+ DMS-REQ-0334  &
+ LVV-165  &
+LVV-T12 \\
+ &
+ &
+LVV-T13 \\
+ &
+ &
+LVV-T14 \\
+ &
+ &
+LVV-T15 \\
+ &
+ &
+LVV-T16 \\
+ &
+ &
+LVV-T78 \\
+ DMS-REQ-0334  &
+ LVV-165  &
+Verified By DM-9953 \\
+ &
+ &
+Verified By DM-13058 \\
+\hline
+ DMS-REQ-0345  &
+ LVV-176  &
+LVV-T161 \\
+\hline
+ DMS-REQ-0354  &
+ LVV-185  &
+LVV-T1086 \\
+ &
+ &
+LVV-T1087 \\
+ &
+ &
+LVV-T1088 \\
+ &
+ &
+LVV-T1089 \\
+ &
+ &
+LVV-T1090 \\
+\hline
+ DMS-REQ-0357  &
+ LVV-188  &
+LVV-T1086 \\
+ &
+ &
+LVV-T1088 \\
+ &
+ &
+LVV-T1089 \\
+ &
+ &
+LVV-T1090 \\
+\hline
+ DMS-REQ-0363  &
+ LVV-189  &
+LVV-T162 \\
+\hline
+ DMS-REQ-0367  &
+ LVV-193  &
+LVV-T166 \\
+\hline
+CA-DM-DAQ-ICD-0058 & LVV-4741 &  \\ \hline
+ \cdashline{2-3} CA-DM-DAQ-ICD-0058 & LVV-4742 &  \\ \hline
+\hline
+CA-DM-DAQ-ICD-0092 & LVV-4783 &  \\ \hline
+\hline
+OCS-DM-COM-ICD-0026 & LVV-5507 &  \\ \hline
+ \cdashline{2-3} OCS-DM-COM-ICD-0026 & LVV-5508 &  \\ \hline
+\hline
+OCS-DM-COM-ICD-0027 & LVV-5525 &  \\ \hline
+ \cdashline{2-3} OCS-DM-COM-ICD-0027 & LVV-5526 &  \\ \hline
+\hline
+ DMS-REQ-0391  &
+ LVV-18297  &
+LVV-T1867 \\
+\hline
+DMS-REQ-0396 & LVV-18841 &  \\ \hline
+\hline
+ DMS-REQ-0397  &
+ LVV-18847  &
+LVV-T1863 \\
+\hline
+\end{longtable}
+
+Note that some of the requirements listed in this traceability table may be related with additional
+Verification Elements not in the scope of \textit{ Infrastructure } Verification,
+and therefore not listed here.
