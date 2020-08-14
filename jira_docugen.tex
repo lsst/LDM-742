@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % generated from JIRA project LVV
 % using template at /usr/local/lib/python3.7/site-packages/docsteady/templates/dm-ve.latex.jinja2.
-% using docsteady version 1.2rc21
+% using docsteady version 1.2rc22
 % Please do not edit -- update information in Jira instead
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -9,6 +9,7 @@
 \label{sec:ves}
 
 The following is the list of verification elements defined in the context of the Infrastructure component of the DM subsystem.
+
 
 \subsection{[LVV-5] DMS-REQ-0008-V-01: Pipeline Availability }\label{lvv-5}
 
@@ -36,20 +37,28 @@ time statistics can only be obtained post commissioning.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0008 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Except in cases of major disaster, the DMS shall
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Except in cases of major disaster, the DMS shall
 have no unscheduled outages of the DMS pipelines extending over a period
 greater than \textbf{productionMaxDowntime}. A major disaster is defined
 as a natural disaster or act of war (e.g. flood, fire, hostile acts)
 that compromises or threatens to compromise the health and integrity of
 the DMS physical facility, computing equipment, or operational
-personnel. \\ \cdashline{1-2}
+personnel.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{productionMaxDowntime = 24{{[}hour{]}}} Maximum allowable outage
 of active DM production. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This applies to active productions only. It is
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This applies to active productions only. It is
 allowed for the Alert Production to be down for longer periods during
 observatory scheduled maintenance, and for the Data Release Production
 to be down during development and validation periods between
-productions. \\ \cdashline{1-2}
+productions.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -105,7 +114,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-36] DMS-REQ-0089-V-01: Solar System Objects Available Within Specified Time }\label{lvv-36}
+ \newpage 
+\subsection{[LVV-36] DMS-REQ-0089-V-01: Solar System Objects Available Within Specified Time }\label{lvv-36}
 
 \begin{longtable}{cccc}
 \hline
@@ -130,9 +140,13 @@ L1PublicT?
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0089 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Detected moving objects and associated metadata
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Detected moving objects and associated metadata
 shall be available for public access in the DMS science data archive
-within time \textbf{L1PublicT} of their generation by the DMS. \\ \cdashline{1-2}
+within time \textbf{L1PublicT} of their generation by the DMS.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -159,7 +173,8 @@ Execute single-day operations rehearsal, observe data products generated
 in time
 }
   
- \newpage \subsection{[LVV-40] DMS-REQ-0098-V-01: Generate DMS Performance Report Within Specified Time }\label{lvv-40}
+ \newpage 
+\subsection{[LVV-40] DMS-REQ-0098-V-01: Generate DMS Performance Report Within Specified Time }\label{lvv-40}
 
 \begin{longtable}{cccc}
 \hline
@@ -182,14 +197,22 @@ it human-readable? Is the text file machine readable?
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0098 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall generate a nightly DMS Performance
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall generate a nightly DMS Performance
 Report within time \textbf{perfReportComplTime} in both human-readable
-and machine-readable forms. \\ \cdashline{1-2}
+and machine-readable forms.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{perfReportComplTime = 4{{[}hour{]}}} Latency for producing Level
 1 DMS Performance Report. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The Report must be timely in order to evaluate
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The Report must be timely in order to evaluate
 whether changes to hardware, software, or procedures are needed for the
-following night's observing. \\ \cdashline{1-2}
+following night's observing.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -214,7 +237,8 @@ Verify that the DMS can generate a nightly Perfomance Report within
 perfReportComplTime
 }
   
- \newpage \subsection{[LVV-42] DMS-REQ-0100-V-01: Generate Calibration Report Within Specified Time }\label{lvv-42}
+ \newpage 
+\subsection{[LVV-42] DMS-REQ-0100-V-01: Generate Calibration Report Within Specified Time }\label{lvv-42}
 
 \begin{longtable}{cccc}
 \hline
@@ -238,14 +262,22 @@ calibrations?
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0100 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall generate a nightly Calibration
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall generate a nightly Calibration
 Report within time \textbf{calibReportComplTime} in both human-readable
-and machine-readable forms. \\ \cdashline{1-2}
+and machine-readable forms.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{calibReportComplTime = 4{{[}hour{]}}} Latency for producing
 Level 1 Calibration Report. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The Report must be timely in order to evaluate
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The Report must be timely in order to evaluate
 whether changes to hardware, software, or procedures are needed for the
-following night's observing. \\ \cdashline{1-2}
+following night's observing.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -270,7 +302,8 @@ Verify that the DMS can generate a night Calibration Report ~in both
 human-readable and machine-parseable forms.
 }
   
- \newpage \subsection{[LVV-44] DMS-REQ-0102-V-01: Provide Engineering \& Facility Database Archive }\label{lvv-44}
+ \newpage 
+\subsection{[LVV-44] DMS-REQ-0102-V-01: Provide Engineering \& Facility Database Archive }\label{lvv-44}
 
 \begin{longtable}{cccc}
 \hline
@@ -296,10 +329,14 @@ demonstrate that the values are public within 24 hours.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0102 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Engineering and Facility data from the
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Engineering and Facility data from the
 Observatory Control System and associated metadata shall be permanently
 archived by the DMS and available for public access within
-\textbf{L1PublicT} hours of their generation by the OCS. \\ \cdashline{1-2}
+\textbf{L1PublicT} hours of their generation by the OCS.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{L1PublicT = 24{{[}hour{]}}} Maximum time from the acquisition of
 science data to the release of associated Level 1 Data Products (except
 alerts) \\ \cdashline{1-2}
@@ -328,7 +365,8 @@ metadata, and observatory environment and control data) are archived and
 available for public access within \textbf{L1PublicT (24 hours)}.~
 }
   
- \newpage \subsection{[LVV-53] DMS-REQ-0125-V-01: Software framework for Level 3 catalog processing }\label{lvv-53}
+ \newpage 
+\subsection{[LVV-53] DMS-REQ-0125-V-01: Software framework for Level 3 catalog processing }\label{lvv-53}
 
 \begin{longtable}{cccc}
 \hline
@@ -350,12 +388,16 @@ I don't entirely understand this requirement.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0125 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide a software framework that
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide a software framework that
 facilitates Level 3 processing of catalogs. This framework shall provide
 a means for applying user-provided processing to catalog data, including
 measuring and ensuring the completeness of the application - i.e., that
 the specified processing was applied to all of, and only, the entire
-contents of the desired catalog(s). \\ \cdashline{1-2}
+contents of the desired catalog(s).
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -382,7 +424,8 @@ Verify that user-driven Level 3 processing can be consistently applied
 to all records in a catalog.
 }
   
- \newpage \subsection{[LVV-54] DMS-REQ-0126-V-01: Access to images for external Level 3 processing }\label{lvv-54}
+ \newpage 
+\subsection{[LVV-54] DMS-REQ-0126-V-01: Access to images for external Level 3 processing }\label{lvv-54}
 
 \begin{longtable}{cccc}
 \hline
@@ -405,10 +448,14 @@ regarding maintenance and validation tools.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0126 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall facilitate Level 3 image
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall facilitate Level 3 image
 processing that may take place at external facilities outside the DACs.
 This will principally be by facilitating the export of image datasets
-and the provision of tools for maintaining and validating exported data. \\ \cdashline{1-2}
+and the provision of tools for maintaining and validating exported data.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -435,7 +482,8 @@ maintenance/validation tools for Level 3 image products to outside of
 the Data Access Centers.
 }
   
- \newpage \subsection{[LVV-56] DMS-REQ-0128-V-01: Software framework for Level 3 image processing }\label{lvv-56}
+ \newpage 
+\subsection{[LVV-56] DMS-REQ-0128-V-01: Software framework for Level 3 image processing }\label{lvv-56}
 
 \begin{longtable}{cccc}
 \hline
@@ -457,12 +505,16 @@ I don't entirely understand this requirement.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0128 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide a software framework that
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide a software framework that
 facilitates Level 3 processing of image data. This framework shall
 provide a means for applying user-provided processing to image data,
 including measuring and ensuring the completeness of the application -
 i.e., that the specified processing was applied to all of, and only, the
-entire contents of the desired dataset. \\ \cdashline{1-2}
+entire contents of the desired dataset.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -488,7 +540,8 @@ Verify that user-specified Level 3 processing can be applied to the
 desired set of images.
 }
   
- \newpage \subsection{[LVV-65] DMS-REQ-0162-V-01: Pipeline Throughput }\label{lvv-65}
+ \newpage 
+\subsection{[LVV-65] DMS-REQ-0162-V-01: Pipeline Throughput }\label{lvv-65}
 
 \begin{longtable}{cccc}
 \hline
@@ -514,10 +567,14 @@ longest observing night).
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0162 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The infrastructure will be sized such that the
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The infrastructure will be sized such that the
 net throughput of the data processing pipelines will permit a complete
 processing of a night's observing data prior to the start of the next
-observing night, assuming no system outages. \\ \cdashline{1-2}
+observing night, assuming no system outages.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -568,7 +625,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-66] DMS-REQ-0163-V-01: Re-processing Capacity }\label{lvv-66}
+ \newpage 
+\subsection{[LVV-66] DMS-REQ-0163-V-01: Re-processing Capacity }\label{lvv-66}
 
 \begin{longtable}{cccc}
 \hline
@@ -591,10 +649,14 @@ resources available for DR1 are sufficient when scaled up.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0163 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide Processing, Storage, and
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide Processing, Storage, and
 Network resources capable of executing the DMS Data Release Production
 over all pre-existing survey data in a time no greater than
-\textbf{drProcessingPeriod}, without impacting observatory operations. \\ \cdashline{1-2}
+\textbf{drProcessingPeriod}, without impacting observatory operations.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{drProcessingPeriod = 1{{[}year{]}}} Duration of the Data Release
 Production, including quality validation. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
@@ -621,7 +683,8 @@ reprocess all data within ``drProcessingPeriod'' (1 year) while
 maintaining full Prompt Processing capability.
 }
   
- \newpage \subsection{[LVV-67] DMS-REQ-0164-V-01: Temporary Storage for Communications Links }\label{lvv-67}
+ \newpage 
+\subsection{[LVV-67] DMS-REQ-0164-V-01: Temporary Storage for Communications Links }\label{lvv-67}
 
 \begin{longtable}{cccc}
 \hline
@@ -644,10 +707,14 @@ soon be at the summit and should be sized according to the MTTR value.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0164 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The infrastructure will provide for temporary
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The infrastructure will provide for temporary
 storage for a minimum of \textbf{tempStorageRelMTTR} of the mean time to
 repair of any communications network link at or before the source end of
-that link. \\ \cdashline{1-2}
+that link.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{tempStorageRelMTTR = 200{{[}percent{]}}} Temporary storage
 required relative to network Mean Time to Repair. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
@@ -679,7 +746,8 @@ hours, baseToArchNetMTTR = 48 hours, ~archToDacNetMTTR = 48 hours).
 2800 = ~3250 exposures/day.
 }
   
- \newpage \subsection{[LVV-68] DMS-REQ-0165-V-01: Infrastructure Sizing for ``catching up'' }\label{lvv-68}
+ \newpage 
+\subsection{[LVV-68] DMS-REQ-0165-V-01: Infrastructure Sizing for ``catching up'' }\label{lvv-68}
 
 \begin{longtable}{cccc}
 \hline
@@ -703,10 +771,14 @@ depending on DMS-REQ-0162)
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0165 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The infrastructure will be sized such that after
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The infrastructure will be sized such that after
 outages, ``catch up'' processing of the temporarily stored raw image
 data may occur at the rate of one night's observing data processed per
-day, without interrupting the current day's observatory operations. \\ \cdashline{1-2}
+day, without interrupting the current day's observatory operations.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -761,7 +833,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-69] DMS-REQ-0166-V-01: Incorporate Fault-Tolerance }\label{lvv-69}
+ \newpage 
+\subsection{[LVV-69] DMS-REQ-0166-V-01: Incorporate Fault-Tolerance }\label{lvv-69}
 
 \begin{longtable}{cccc}
 \hline
@@ -788,9 +861,13 @@ become corrupt.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0166 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The infrastructure will incorporate as
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The infrastructure will incorporate as
 fault-tolerance features to prevent loss of data in the event of
-hardware or software failure. \\ \cdashline{1-2}
+hardware or software failure.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -821,7 +898,8 @@ failures is covered in
 ). ~~
 }
   
- \newpage \subsection{[LVV-70] DMS-REQ-0167-V-01: Incorporate Autonomics }\label{lvv-70}
+ \newpage 
+\subsection{[LVV-70] DMS-REQ-0167-V-01: Incorporate Autonomics }\label{lvv-70}
 
 \begin{longtable}{cccc}
 \hline
@@ -849,11 +927,19 @@ test for Byzantine failures.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0167 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The infrastructure will incorporate sufficient
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The infrastructure will incorporate sufficient
 capability for self-diagnostics and recovery to provide for continuation
-of processing in the event of partial hardware or software failures. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} It is understood that the system performance may
-degrade with increasing numbers of failures. \\ \cdashline{1-2}
+of processing in the event of partial hardware or software failures.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} It is understood that the system performance may
+degrade with increasing numbers of failures.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -903,7 +989,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-72] DMS-REQ-0170-V-01: Prefer Computing and Storage Down }\label{lvv-72}
+ \newpage 
+\subsection{[LVV-72] DMS-REQ-0170-V-01: Prefer Computing and Storage Down }\label{lvv-72}
 
 \begin{longtable}{cccc}
 \hline
@@ -925,11 +1012,15 @@ Agree that we have minimized compute and storage at summit.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0170 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS computing and storage equipment will be
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS computing and storage equipment will be
 preferentially located at a lower altitude Facility (Base or Archive
 Center) versus the Summit Facility due to lower support costs and fewer
 reliability issues. Therefore any processing that can be done in either
-location will be allocated to a lower altitude Facility. \\ \cdashline{1-2}
+location will be allocated to a lower altitude Facility.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -954,7 +1045,8 @@ justified by operational need or to prevent loss of data during
 networking downtimes.
 }
   
- \newpage \subsection{[LVV-78] DMS-REQ-0176-V-01: Base Facility Infrastructure }\label{lvv-78}
+ \newpage 
+\subsection{[LVV-78] DMS-REQ-0176-V-01: Base Facility Infrastructure }\label{lvv-78}
 
 \begin{longtable}{cccc}
 \hline
@@ -976,14 +1068,22 @@ Show that the base facility has sufficient resources.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0176 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base Facility shall provide sufficient
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Base Facility shall provide sufficient
 computing, storage, and network infrastructure to support buffering and
 forwarding of all raw and crosstalk-corrected image data to the Archive
 Facility, a complete copy of the Archive Facility data holdings, and
-compute facilities to support Commissioning activities. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The Base Facility is co-located with the Chilean
+compute facilities to support Commissioning activities.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The Base Facility is co-located with the Chilean
 DAC, and also serves as a back-up for the Archive Center in the event of
-disaster. \\ \cdashline{1-2}
+disaster.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1009,7 +1109,8 @@ transfer and buffering, a copy of the Archive Facility, and support for
 Commissioning.
 }
   
- \newpage \subsection{[LVV-80] DMS-REQ-0178-V-01: Base Facility Co-Location with Existing Facility }\label{lvv-80}
+ \newpage 
+\subsection{[LVV-80] DMS-REQ-0178-V-01: Base Facility Co-Location with Existing Facility }\label{lvv-80}
 
 \begin{longtable}{cccc}
 \hline
@@ -1031,8 +1132,12 @@ Show that the base facility is co-located.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0178 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base Facility shall be co-located at an
-existing facility to leverage existing support and facility resources \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Base Facility shall be co-located at an
+existing facility to leverage existing support and facility resources
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1058,7 +1163,8 @@ Verify that the Base Facility is located at an existing known supported
 facility.
 }
   
- \newpage \subsection{[LVV-85] DMS-REQ-0185-V-01: Archive Center }\label{lvv-85}
+ \newpage 
+\subsection{[LVV-85] DMS-REQ-0185-V-01: Archive Center }\label{lvv-85}
 
 \begin{longtable}{cccc}
 \hline
@@ -1081,14 +1187,18 @@ can be run simultaneously.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0185 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive Center shall provide computing,
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Archive Center shall provide computing,
 storage, and network infrastructure to support, simultaneously: nightly
 processing including image processing, detection, association, and
 moving object pipelines, and the generation of all time-critical data
 products, i.e. alerts; the data release production, including Level-2
 data product creation, permanent storage for all data products (with
 provenance), including federated Level-3 products; and serve data for
-replication to data centers and end user sites. \\ \cdashline{1-2}
+replication to data centers and end user sites.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1113,7 +1223,8 @@ Verify that the Archive Center is sufficiently provisioned to support
 prompt processing, DRP, and data access needs.
 }
   
- \newpage \subsection{[LVV-86] DMS-REQ-0186-V-01: Archive Center Disaster Recovery }\label{lvv-86}
+ \newpage 
+\subsection{[LVV-86] DMS-REQ-0186-V-01: Archive Center Disaster Recovery }\label{lvv-86}
 
 \begin{longtable}{cccc}
 \hline
@@ -1136,11 +1247,15 @@ demonstrate that data are recovered.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0186 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive Center shall provide disaster
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Archive Center shall provide disaster
 recovery support preventing loss of LSST data in the case of
 infrastructure or facility-threatening events. This support shall enable
 recovery of all LSST archived data from backed up sources, including
-Data Access Centers. \\ \cdashline{1-2}
+Data Access Centers.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1164,7 +1279,8 @@ Robert Gruendl & Draft & 1 & false & Test \\ \hline
 Verify disaster recovery plan for Archive Center.
 }
   
- \newpage \subsection{[LVV-87] DMS-REQ-0187-V-01: Archive Center Co-Location with Existing Facility }\label{lvv-87}
+ \newpage 
+\subsection{[LVV-87] DMS-REQ-0187-V-01: Archive Center Co-Location with Existing Facility }\label{lvv-87}
 
 \begin{longtable}{cccc}
 \hline
@@ -1186,8 +1302,12 @@ Show that NCSA is NSF funded or that SLAC is DOE funded.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0187 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Archive Center shall be hosted at an
-existing NSF/DOE-funded supercomputing center. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Archive Center shall be hosted at an
+existing NSF/DOE-funded supercomputing center.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1212,7 +1332,8 @@ Robert Gruendl & Draft & 1 & false & Test \\ \hline
 Verify the Archive Center is located at an existing supported facility.
 }
   
- \newpage \subsection{[LVV-92] DMS-REQ-0193-V-01: Data Access Centers }\label{lvv-92}
+ \newpage 
+\subsection{[LVV-92] DMS-REQ-0193-V-01: Data Access Centers }\label{lvv-92}
 
 \begin{longtable}{cccc}
 \hline
@@ -1234,9 +1355,13 @@ Show that computing, storage and network meet the design goals.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0193 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Data Access Centers shall provide computing,
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Data Access Centers shall provide computing,
 storage, and network infrastructure to support open access to LSST data
-products (with provenance) by end users. \\ \cdashline{1-2}
+products (with provenance) by end users.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1260,7 +1385,8 @@ Verify that the Data Access Centers are provisioned with computing
 resources necessary to support end-user access to LSST Data Products.
 }
   
- \newpage \subsection{[LVV-93] DMS-REQ-0194-V-01: Data Access Center Simultaneous Connections }\label{lvv-93}
+ \newpage 
+\subsection{[LVV-93] DMS-REQ-0194-V-01: Data Access Center Simultaneous Connections }\label{lvv-93}
 
 \begin{longtable}{cccc}
 \hline
@@ -1283,8 +1409,12 @@ supported.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0194 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} At least \textbf{dacMinConnections} simultaneous
-connections shall be supported at each Data Access Center. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} At least \textbf{dacMinConnections} simultaneous
+connections shall be supported at each Data Access Center.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{dacMinConnections = 300{{[}integer{]}}} Minimum simultaneous
 connections to end-users. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
@@ -1309,7 +1439,8 @@ Verify that the each DAC can support at least dacMinConnections
 simultaneously
 }
   
- \newpage \subsection{[LVV-94] DMS-REQ-0196-V-01: Data Access Center Geographical Distribution }\label{lvv-94}
+ \newpage 
+\subsection{[LVV-94] DMS-REQ-0196-V-01: Data Access Center Geographical Distribution }\label{lvv-94}
 
 \begin{longtable}{cccc}
 \hline
@@ -1331,10 +1462,14 @@ Show that we have at least one DAC in the US and one DAC in Chile.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0196 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Data Access Centers will be hosted at
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Data Access Centers will be hosted at
 facilities selected in at least the U.S. and the observatory host
 country to permit widest possible access to LSST data with the fewest
-possible network hops. \\ \cdashline{1-2}
+possible network hops.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1360,7 +1495,8 @@ Verify that the DACs are geographically distributed to provide
 low-latency access to data-rights community.
 }
   
- \newpage \subsection{[LVV-95] DMS-REQ-0197-V-01: No Limit on Data Access Centers }\label{lvv-95}
+ \newpage 
+\subsection{[LVV-95] DMS-REQ-0197-V-01: No Limit on Data Access Centers }\label{lvv-95}
 
 \begin{longtable}{cccc}
 \hline
@@ -1383,10 +1519,14 @@ documented procedure.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0197 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The number of Data Access Centers shall be
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The number of Data Access Centers shall be
 limited only by available internal or external funding. No architectural
 constraints will be placed on the DMS that prohibit the addition of Data
-Access Centers at any time, subject to funding. \\ \cdashline{1-2}
+Access Centers at any time, subject to funding.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1411,7 +1551,8 @@ Colin Slater & Draft & 1 & false & Test \\ \hline
 Verify that additional Data Access Centers can be set up.
 }
   
- \newpage \subsection{[LVV-115] DMS-REQ-0284-V-01: Level-1 Production Completeness }\label{lvv-115}
+ \newpage 
+\subsection{[LVV-115] DMS-REQ-0284-V-01: Level-1 Production Completeness }\label{lvv-115}
 
 \begin{longtable}{cccc}
 \hline
@@ -1437,10 +1578,14 @@ continue taking data, put network back, check archive.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0284 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall ensure that all images taken by
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall ensure that all images taken by
 the camera and marked for Level-1 processing are eventually retrieved,
 archived, and processed even in the event of connectivity failure
-between downstream Facilities. \\ \cdashline{1-2}
+between downstream Facilities.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1537,7 +1682,8 @@ aspects of what it means for a raw image to be in the Data Backbone, see
 the tests for the Data Backbone.
 }
   
- \newpage \subsection{[LVV-126] DMS-REQ-0295-V-01: Transparent Data Access }\label{lvv-126}
+ \newpage 
+\subsection{[LVV-126] DMS-REQ-0295-V-01: Transparent Data Access }\label{lvv-126}
 
 \begin{longtable}{cccc}
 \hline
@@ -1560,9 +1706,13 @@ Chilean DAC. Can be done with test DRP data.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0295 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide an interface that allows
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide an interface that allows
 retrieval by productions or science users of datasets from any Facility
-where they may reside without requiring reconfiguration. \\ \cdashline{1-2}
+where they may reside without requiring reconfiguration.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1587,7 +1737,8 @@ Kian-Tat Lim & Draft & 1 & false & Test \\ \hline
 Observe dataset retrieval from multiple LSP instances
 }
   
- \newpage \subsection{[LVV-128] DMS-REQ-0297-V-01: DMS Initialization Component }\label{lvv-128}
+ \newpage 
+\subsection{[LVV-128] DMS-REQ-0297-V-01: DMS Initialization Component }\label{lvv-128}
 
 \begin{longtable}{cccc}
 \hline
@@ -1639,12 +1790,20 @@ Data Backbone (Archive Base and NCSA)~\\
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0297 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall contain a component that, at each
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall contain a component that, at each
 Center, can initialize the DM Subsystem into a well-defined safe state
-when powered up. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} A safe state is one that does not permit the
+when powered up.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} A safe state is one that does not permit the
 corruption or loss of previously archived data, nor of sending spurious
-information over any interface. \\ \cdashline{1-2}
+information over any interface.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1671,7 +1830,8 @@ Demonstrate that the DMS can be initialized in a safe state that will
 not allow data corruption/loss.
 }
   
- \newpage \subsection{[LVV-131] DMS-REQ-0300-V-01: Bulk Download Service }\label{lvv-131}
+ \newpage 
+\subsection{[LVV-131] DMS-REQ-0300-V-01: Bulk Download Service }\label{lvv-131}
 
 \begin{longtable}{cccc}
 \hline
@@ -1694,9 +1854,17 @@ data centre. Better to show that it can be done between NCSA and IN2P3.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0300 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to enable bulk
-download of data products and raw data, subject to network bandwidth. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This includes bulk download of older data releases. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to enable bulk
+download of data products and raw data, subject to network bandwidth.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This includes bulk download of older data releases.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1719,7 +1887,8 @@ Robert Gruendl & Draft & 1 & false & Test \\ \hline
 Bulk Download
 }
   
- \newpage \subsection{[LVV-133] DMS-REQ-0302-V-01: Production Orchestration }\label{lvv-133}
+ \newpage 
+\subsection{[LVV-133] DMS-REQ-0302-V-01: Production Orchestration }\label{lvv-133}
 
 \begin{longtable}{cccc}
 \hline
@@ -1743,9 +1912,13 @@ correct rate and check that the system configures itself properly.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0302 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to orchestrate
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to orchestrate
 execution of productions, including deploying pipelines on a computing
-platform. \\ \cdashline{1-2}
+platform.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1785,7 +1958,8 @@ Demonstrate use to orchestration software to perform real-time and batch
 production on LSST compute platform(s).
 }
   
- \newpage \subsection{[LVV-134] DMS-REQ-0303-V-01: Production Monitoring }\label{lvv-134}
+ \newpage 
+\subsection{[LVV-134] DMS-REQ-0303-V-01: Production Monitoring }\label{lvv-134}
 
 \begin{longtable}{cccc}
 \hline
@@ -1808,8 +1982,12 @@ For test in DMS-REQ-0302 verify that status GUI functions as expected.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0303 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to monitor
-execution of pipelines in real time. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to monitor
+execution of pipelines in real time.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1849,7 +2027,8 @@ Demonstrate monitoring capabilities that give real-time view of pipeline
 execution and production systems usage/load.
 }
   
- \newpage \subsection{[LVV-135] DMS-REQ-0304-V-01: Production Fault Tolerance }\label{lvv-135}
+ \newpage 
+\subsection{[LVV-135] DMS-REQ-0304-V-01: Production Fault Tolerance }\label{lvv-135}
 
 \begin{longtable}{cccc}
 \hline
@@ -1873,8 +2052,12 @@ recovers on its own.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0304 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to detect faults
-in pipeline execution and recover when possible. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to detect faults
+in pipeline execution and recover when possible.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1900,7 +2083,8 @@ provide production artifacts for examination, return production elements
 ready for subsequent use, and/or reset and repeat production attempts.
 }
   
- \newpage \subsection{[LVV-136] DMS-REQ-0305-V-01: Task Specification }\label{lvv-136}
+ \newpage 
+\subsection{[LVV-136] DMS-REQ-0305-V-01: Task Specification }\label{lvv-136}
 
 \begin{longtable}{cccc}
 \hline
@@ -1924,9 +2108,13 @@ chained together.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0305 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to define (and
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to define (and
 redefine without recompilation) a pipeline task containing a science
-algorithm, which may in turn consist of the execution of other subtasks. \\ \cdashline{1-2}
+algorithm, which may in turn consist of the execution of other subtasks.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -1965,7 +2153,8 @@ Verify that the DMS provides the ability to define a new or modified
 pipeline task without recompilation.
 }
   
- \newpage \subsection{[LVV-137] DMS-REQ-0306-V-01: Task Configuration }\label{lvv-137}
+ \newpage 
+\subsection{[LVV-137] DMS-REQ-0306-V-01: Task Configuration }\label{lvv-137}
 
 \begin{longtable}{cccc}
 \hline
@@ -1989,9 +2178,13 @@ configuration system passes unit tests.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0306 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide software to define,
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide software to define,
 override components of, and verify the suitability of the configuration
-for a task. \\ \cdashline{1-2}
+for a task.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2030,7 +2223,8 @@ Verify that the DMS software provides configuration control to define,
 override, and verify the configuration for a DMS Task.
 }
   
- \newpage \subsection{[LVV-140] DMS-REQ-0309-V-01: Raw Data Archiving Reliability }\label{lvv-140}
+ \newpage 
+\subsection{[LVV-140] DMS-REQ-0309-V-01: Raw Data Archiving Reliability }\label{lvv-140}
 
 \begin{longtable}{cccc}
 \hline
@@ -2060,19 +2254,27 @@ data have not changed since we received it.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0309 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS system shall archive all data, including
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS system shall archive all data, including
 science, wavefront, and guider images and associated metadata, that are
 presented for archiving by up-stream systems, with a rate of permanent
-data loss or corruption not to exceed \textbf{dataLossMax}. \\ \cdashline{1-2}
+data loss or corruption not to exceed \textbf{dataLossMax}.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{dataLossMax = 1.0e-5{{[}float{]}}} Maximum fraction of raw
 images that are permitted to be permanently lost or corrupted, including
 the loss or corruption of essential associated metadata, once acquired
 by the DMS. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} Data ``presented for archiving'' means data that
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} Data ``presented for archiving'' means data that
 have been successfully transferred from upstream systems to DMS, and
 that are intended for permanent archiving. Data obtained for diagnostic
 and other limited-use engineering purposes are specifically excluded
-from this requirement. \\ \cdashline{1-2}
+from this requirement.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2136,7 +2338,8 @@ Michelle Gower & Draft & 1 & false & Test \\ \hline
 \end{itemize}
 }
   
- \newpage \subsection{[LVV-141] DMS-REQ-0310-V-01: Un-Archived Data Product Cache }\label{lvv-141}
+ \newpage 
+\subsection{[LVV-141] DMS-REQ-0310-V-01: Un-Archived Data Product Cache }\label{lvv-141}
 
 \begin{longtable}{cccc}
 \hline
@@ -2160,9 +2363,13 @@ during precovery.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0310 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS shall provide low-latency storage for
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS shall provide low-latency storage for
 un-archived data products of at least \textbf{l1CacheLifetime} to enable
-efficient precovery and other Level-1 production measurements. \\ \cdashline{1-2}
+efficient precovery and other Level-1 production measurements.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{l1CacheLifetime = 30{{[}day{]}}} Lifetime in the cache of
 un-archived Level-1 data products. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
@@ -2189,7 +2396,8 @@ I1CacheLifetime (30 days) to keep prompt processing pre-covery images on
 hand.
 }
   
- \newpage \subsection{[LVV-145] DMS-REQ-0314-V-01: Compute Platform Heterogeneity }\label{lvv-145}
+ \newpage 
+\subsection{[LVV-145] DMS-REQ-0314-V-01: Compute Platform Heterogeneity }\label{lvv-145}
 
 \begin{longtable}{cccc}
 \hline
@@ -2215,13 +2423,21 @@ hardware specification.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0314 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} At any given LSST computational facility the DMS
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} At any given LSST computational facility the DMS
 shall be capable of operations on a heterogeneous cluster of machines.
 The hardware, operating system, and other machine parameters shall be
-limited to a project-approved set. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The necessity of replacing hardware throughout the
+limited to a project-approved set.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The necessity of replacing hardware throughout the
 course of the survey essentially guarantees heterogeneity within a
-cluster. \\ \cdashline{1-2}
+cluster.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2272,7 +2488,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-146] DMS-REQ-0315-V-01: DMS Communication with OCS }\label{lvv-146}
+ \newpage 
+\subsection{[LVV-146] DMS-REQ-0315-V-01: DMS Communication with OCS }\label{lvv-146}
 
 \begin{longtable}{cccc}
 \hline
@@ -2299,8 +2516,12 @@ the (simulated) summit.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0315 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The DMS at the Base Site shall contain a
-component to accept control commands from and communicate with the OCS. \\ \cdashline{1-2}
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The DMS at the Base Site shall contain a
+component to accept control commands from and communicate with the OCS.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2394,7 +2615,8 @@ CCOB with 21 rafts from SLAC and ingested at NCSA and make available
 through an instance of the LSP
 }
   
- \newpage \subsection{[LVV-147] DMS-REQ-0316-V-01: Commissioning Cluster }\label{lvv-147}
+ \newpage 
+\subsection{[LVV-147] DMS-REQ-0316-V-01: Commissioning Cluster }\label{lvv-147}
 
 \begin{longtable}{cccc}
 \hline
@@ -2418,12 +2640,16 @@ installation.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0316 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Base Facility shall include a compute
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Base Facility shall include a compute
 cluster to be made available to the Systems Engineering group for use in
 commissioning. Data Management will not administer or otherwise maintain
 this cluster following hardware installation. The budget for this
 cluster shall be at least \textbf{budgetRelAlertProd} of the budget for
-Alert Production hardware. \\ \cdashline{1-2}
+Alert Production hardware.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{budgetRelAlertProd = 10{{[}percent{]}}} Budget relative to the
 cost of the Alert Production system. \\ \cdashline{1-2}
 Requirement Priority & 1a \\ \cdashline{1-2}
@@ -2448,7 +2674,8 @@ Verify that the Commissioning Cluster has sufficient Compute/Storage/LAN
 at the Base Facility to support Commissioning.
 }
   
- \newpage \subsection{[LVV-149] DMS-REQ-0318-V-01: Data Management Unscheduled Downtime }\label{lvv-149}
+ \newpage 
+\subsection{[LVV-149] DMS-REQ-0318-V-01: Data Management Unscheduled Downtime }\label{lvv-149}
 
 \begin{longtable}{cccc}
 \hline
@@ -2474,11 +2701,17 @@ archiving to IN2P3.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0318 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Data Management subsystem shall be designed
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Data Management subsystem shall be designed
 to facilitate unplanned repair activities expected not to exceed
-\textbf{DMDowntime} days per year. \\ \cdashline{1-2}
+\textbf{DMDowntime} days per year.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{DMDowntime = 1{{[}day{]}}} Unplanned downtime per year. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This requirement does not apply to DM's alert
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This requirement does not apply to DM's alert
 publication and other data processing and user-interaction
 functionality, but only to failures in DM that directly prevent the
 collection of survey data. The reference case would be a failure of
@@ -2489,7 +2722,9 @@ capacity by one day and therefore use up the proposed allocation.\\
 This requirement does not invoke the need to verify by reliability
 analysis. Verification is by analysis that identifies likely hardware
 failures and identifies mitigations to minimize downtime caused by those
-failures. \\ \cdashline{1-2}
+failures.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2544,7 +2779,8 @@ This test will check:\\[2\baselineskip]
 This test case need to be completed when more information is available.
 }
   
- \newpage \subsection{[LVV-153] DMS-REQ-0322-V-01: Special Programs Database }\label{lvv-153}
+ \newpage 
+\subsection{[LVV-153] DMS-REQ-0322-V-01: Special Programs Database }\label{lvv-153}
 
 \begin{longtable}{cccc}
 \hline
@@ -2567,11 +2803,15 @@ products appear in distinct databases.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0322 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Data products for special programs shall be
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Data products for special programs shall be
 stored in databases that are distinct from those used to store standard
 Level 1 and Level 2 data products. It shall be possible for these
 databases to be federated with the Level 1 and Level 2 databases to
-allow cross-queries and joins. \\ \cdashline{1-2}
+allow cross-queries and joins.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2599,7 +2839,8 @@ e.g., find the faint counterparts in a Deep Drilling stack to variables
 with no Object detections in the DRP coadds.
 }
   
- \newpage \subsection{[LVV-165] DMS-REQ-0334-V-01: Persisting Data Products }\label{lvv-165}
+ \newpage 
+\subsection{[LVV-165] DMS-REQ-0334-V-01: Persisting Data Products }\label{lvv-165}
 
 \begin{longtable}{cccc}
 \hline
@@ -2627,14 +2868,22 @@ data retention policies for those products.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0334 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} All per-band deep coadds and best seeing coadds
-shall be kept indefinitely and made available to users. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This requirement is intended to list all the data
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} All per-band deep coadds and best seeing coadds
+shall be kept indefinitely and made available to users.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This requirement is intended to list all the data
 products that must be archived rather than regenerated on demand.
 DMS-REQ-0069 indicates in discussion that Processed Visit Images are not
 archived. DMS-REQ-0010 indicates in the discussion that Difference
 Exposures are not archived.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2836,7 +3085,8 @@ Verify that per-band deep coadds and best-seeing coadds are present,
 kept, and available.
 }
   
- \newpage \subsection{[LVV-176] DMS-REQ-0345-V-01: Logging of catalog queries }\label{lvv-176}
+ \newpage 
+\subsection{[LVV-176] DMS-REQ-0345-V-01: Logging of catalog queries }\label{lvv-176}
 
 \begin{longtable}{cccc}
 \hline
@@ -2859,20 +3109,28 @@ correct information is present.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0345 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Every query of LSST databases shall be logged.
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Every query of LSST databases shall be logged.
 The logging shall contain at least the query itself, the user who
 submitted the query, the date and time the query was submitted, the
 execution time of the query, and the number of rows returned. The query
 history shall be available to the user that made the query but shall
-otherwise be private and only accessible by administrators. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The logs can be used for auditing in case of a
+otherwise be private and only accessible by administrators.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The logs can be used for auditing in case of a
 dispute regarding data release timing. They can also be used by the data
 access team to learn the usage patterns of the system (such as the times
 of day/month with high load, or the most popular queries) and provide
 statistics for focusing on future developments and improvements of LSST.
 Whilst queries are private by default, in conjunction with DMS-REQ-0291,
 it would be desirable for a query to be published and associated with a
-DOI. \\ \cdashline{1-2}
+DOI.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -2897,7 +3155,8 @@ globally available to DB administrators but otherwise private excepting
 the user that made the query.
 }
   
- \newpage \subsection{[LVV-185] DMS-REQ-0354-V-01: Result latency for high-volume complex queries }\label{lvv-185}
+ \newpage 
+\subsection{[LVV-185] DMS-REQ-0354-V-01: Result latency for high-volume complex queries }\label{lvv-185}
 
 \begin{longtable}{cccc}
 \hline
@@ -2924,13 +3183,21 @@ the allotted time.
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0354 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} Complex high-volume queries --- queries that
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} Complex high-volume queries --- queries that
 involve full-sky spatial and temporal correlations -- shall be answered
-in less than \textbf{hvComplexQueryTime}. \\ \cdashline{1-2}
+in less than \textbf{hvComplexQueryTime}.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{hvComplexQueryTime = 12{{[}hour{]}}} Maximum time allowed for
 retrieving results of a high-volume complex query. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This can include the ForcedSource and Object\_Extra
-tables. \\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This can include the ForcedSource and Object\_Extra
+tables.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3006,7 +3273,8 @@ simultaneous high and low volume queries while running against an
 appropriately scaled test catalog.
 }
   
- \newpage \subsection{[LVV-188] DMS-REQ-0357-V-01: Result latency for high-volume full-sky queries on
+ \newpage 
+\subsection{[LVV-188] DMS-REQ-0357-V-01: Result latency for high-volume full-sky queries on
 the Object table }\label{lvv-188}
 
 \begin{longtable}{cccc}
@@ -3032,9 +3300,13 @@ tbc
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0357 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} High-volume queries on the Object table --
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} High-volume queries on the Object table --
 queries that involve full-sky scans -- shall be answered in
-\textbf{hvObjectQueryTime}. \\ \cdashline{1-2}
+\textbf{hvObjectQueryTime}.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{hvObjectQueryTime = 1{{[}hour{]}}} Maximum time allowed for
 retrieving results of a high-volume query of the Object table. \\ \cdashline{1-2}
 Requirement Priority & 1b \\ \cdashline{1-2}
@@ -3100,7 +3372,8 @@ simultaneous high and low volume queries while running against an
 appropriately scaled test catalog.
 }
   
- \newpage \subsection{[LVV-189] DMS-REQ-0363-V-01: Access to Previous Data Releases }\label{lvv-189}
+ \newpage 
+\subsection{[LVV-189] DMS-REQ-0363-V-01: Access to Previous Data Releases }\label{lvv-189}
 
 \begin{longtable}{cccc}
 \hline
@@ -3122,9 +3395,13 @@ tbc
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0363 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The LSST Project shall provide data access
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The LSST Project shall provide data access
 services for the current Level 1 data, the most recent \textbf{nDRMin}
-Data Releases, and multiple older Data Releases. \\ \cdashline{1-2}
+Data Releases, and multiple older Data Releases.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{nDRMin = 2{{[}integer{]}}} Minimum number of recent data
 releases \\ \cdashline{1-2}
 Requirement Priority & 3 \\ \cdashline{1-2}
@@ -3157,7 +3434,8 @@ multiple releases.\\
 LSP Web APIs, Parallel Distributed Database)
 }
   
- \newpage \subsection{[LVV-193] DMS-REQ-0367-V-01: Access Services Performance }\label{lvv-193}
+ \newpage 
+\subsection{[LVV-193] DMS-REQ-0367-V-01: Access Services Performance }\label{lvv-193}
 
 \begin{longtable}{cccc}
 \hline
@@ -3179,9 +3457,13 @@ tbc
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0367 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The data access services for the most recent
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The data access services for the most recent
 \textbf{nDRMin} Data Releases shall meet the performance requirements
-set forth in OSS-REQ-0180 and OSS-REQ-0181. \\ \cdashline{1-2}
+set forth in OSS-REQ-0180 and OSS-REQ-0181.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{nDRMin = 2{{[}integer{]}}} Minimum number of recent data
 releases \\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
@@ -3207,7 +3489,8 @@ Demonstrate monitoring of Data Access Services that give real and
 long-time views of system performance and usage.
 }
   
- \newpage \subsection{[LVV-4741] CA-DM-DAQ-ICD-0058-V-03: Image Data Format\_DM\_3 }\label{lvv-4741}
+ \newpage 
+\subsection{[LVV-4741] CA-DM-DAQ-ICD-0058-V-03: Image Data Format\_DM\_3 }\label{lvv-4741}
 
 \begin{longtable}{cccc}
 \hline
@@ -3228,10 +3511,14 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & CA-DM-DAQ-ICD-0058 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} ~The camera shall document and implement a class
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} ~The camera shall document and implement a class
 interface representing the structure of the data provided to image data
 consumers. This shall include the image pixel data and the structural
-metadata. \\ \cdashline{1-2}
+metadata.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3242,7 +3529,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-4742] CA-DM-DAQ-ICD-0058-V-04: Image Data Format\_DM\_4 }\label{lvv-4742}
+ \newpage 
+\subsection{[LVV-4742] CA-DM-DAQ-ICD-0058-V-04: Image Data Format\_DM\_4 }\label{lvv-4742}
 
 \begin{longtable}{cccc}
 \hline
@@ -3263,10 +3551,14 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & CA-DM-DAQ-ICD-0058 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} ~The camera shall document and implement a class
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} ~The camera shall document and implement a class
 interface representing the structure of the data provided to image data
 consumers. This shall include the image pixel data and the structural
-metadata. \\ \cdashline{1-2}
+metadata.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3277,7 +3569,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-4783] CA-DM-DAQ-ICD-0092-V-03: Maximum number of simultaneous clients\_DM\_3 }\label{lvv-4783}
+ \newpage 
+\subsection{[LVV-4783] CA-DM-DAQ-ICD-0092-V-03: Maximum number of simultaneous clients\_DM\_3 }\label{lvv-4783}
 
 \begin{longtable}{cccc}
 \hline
@@ -3298,16 +3591,24 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & CA-DM-DAQ-ICD-0092 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Camera shall support simultaneous access to
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Camera shall support simultaneous access to
 the image store by at least four privileged consumers, each of which may
 consist of multiple nodes retrieving, in combination, up to one focal
 plane's worth of image data, for which its performance guarantees (for
-latency and throughput) are met. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion}: The value specified is believed to meet both the
+latency and throughput) are met.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion}: The value specified is believed to meet both the
 requirements of Data Management and the requirements of the Observatory
 for access to images for display and diagnostic purposes. The Camera may
 support additional non-privileged consumers, but without any performance
-guarantees for them. \\ \cdashline{1-2}
+guarantees for them.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3318,7 +3619,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-5507] OCS-DM-COM-ICD-0026-V-01: Engineering and Facilities Database Archiving
+ \newpage 
+\subsection{[LVV-5507] OCS-DM-COM-ICD-0026-V-01: Engineering and Facilities Database Archiving
 by Data Management\_DM\_1 }\label{lvv-5507}
 
 \begin{longtable}{cccc}
@@ -3340,14 +3642,22 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & OCS-DM-COM-ICD-0026 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification}: Data Management shall maintain at least two
 physically separated copies of the Transformed EFD.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion}: Data Management performs the archiving continuously
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion}: Data Management performs the archiving continuously
 as long as the EFD Transformation Service CSC is in the ``enabled''
 state. If the EFD Transformation CSC is disabled, transformation and
 archiving will resume and catch up when it is enabled.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3358,7 +3668,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-5508] OCS-DM-COM-ICD-0026-V-02: Engineering and Facilities Database Archiving
+ \newpage 
+\subsection{[LVV-5508] OCS-DM-COM-ICD-0026-V-02: Engineering and Facilities Database Archiving
 by Data Management\_DM\_2 }\label{lvv-5508}
 
 \begin{longtable}{cccc}
@@ -3380,14 +3691,22 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & OCS-DM-COM-ICD-0026 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification}: Data Management shall maintain at least two
 physically separated copies of the Transformed EFD.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion}: Data Management performs the archiving continuously
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion}: Data Management performs the archiving continuously
 as long as the EFD Transformation Service CSC is in the ``enabled''
 state. If the EFD Transformation CSC is disabled, transformation and
 archiving will resume and catch up when it is enabled.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3398,7 +3717,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-5525] OCS-DM-COM-ICD-0027-V-01: Multiple Physically Separated Copies\_DM\_1 }\label{lvv-5525}
+ \newpage 
+\subsection{[LVV-5525] OCS-DM-COM-ICD-0027-V-01: Multiple Physically Separated Copies\_DM\_1 }\label{lvv-5525}
 
 \begin{longtable}{cccc}
 \hline
@@ -3419,9 +3739,13 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & OCS-DM-COM-ICD-0027 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification}: Data Management shall maintain at least two
 physically separated copies of the Transformed EFD.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3432,7 +3756,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-5526] OCS-DM-COM-ICD-0027-V-02: Multiple Physically Separated Copies\_DM\_2 }\label{lvv-5526}
+ \newpage 
+\subsection{[LVV-5526] OCS-DM-COM-ICD-0027-V-02: Multiple Physically Separated Copies\_DM\_2 }\label{lvv-5526}
 
 \begin{longtable}{cccc}
 \hline
@@ -3453,9 +3778,13 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & OCS-DM-COM-ICD-0027 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification}: Data Management shall maintain at least two
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification}: Data Management shall maintain at least two
 physically separated copies of the Transformed EFD.\\
-\hspace*{0.333em} \\ \cdashline{1-2}
+\hspace*{0.333em}
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority &  \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3466,7 +3795,8 @@ Upper Level Requirement &
 
 
   
- \newpage \subsection{[LVV-18297] DMS-REQ-0391-V-01: Alert Stream Distribution nStreams }\label{lvv-18297}
+ \newpage 
+\subsection{[LVV-18297] DMS-REQ-0391-V-01: Alert Stream Distribution nStreams }\label{lvv-18297}
 
 \begin{longtable}{cccc}
 \hline
@@ -3490,16 +3820,24 @@ the latency (OTT1).
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0391 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} LSST shall be capable of supporting the
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} LSST shall be capable of supporting the
 transmission of at least \textbf{numStreams} full alert streams out of
-the alert distribution system within \textbf{OTT1}. \\ \cdashline{1-2}
+the alert distribution system within \textbf{OTT1}.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & {[}\textbf{numStreams = 5{{[}integer{]}}} The minimum number of full
 streams that can be transmitted out of the alert distribution system.,
 \textbf{OTT1 = 1{{[}minute{]}}} The latency of reporting optical
 transients following the completion of readout of the last image of a
 visit{]} \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This requirement establishes the minimum capacity
-needed for timely transmission of alerts to community brokers. \\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This requirement establishes the minimum capacity
+needed for timely transmission of alerts to community brokers.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3525,7 +3863,8 @@ Verify that the LSST system supports the transmission of at least
 system within \textbf{OTT1=1 minute}.~
 }
   
- \newpage \subsection{[LVV-18841] DMS-REQ-0396-V-01: Data Products Processing Infrastructure\_1 }\label{lvv-18841}
+ \newpage 
+\subsection{[LVV-18841] DMS-REQ-0396-V-01: Data Products Processing Infrastructure\_1 }\label{lvv-18841}
 
 \begin{longtable}{cccc}
 \hline
@@ -3546,15 +3885,23 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0396 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} The Data Management System shall provide at
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} The Data Management System shall provide at
 least a fraction \textbf{userComputingFraction} of its total capability
 for user-dedicated processing and user-dedicated storage, including for
-the generation of Level 3 data products. \\ \cdashline{1-2}
+the generation of Level 3 data products.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Parameters & \textbf{userComputingFraction = 10{{[}percent{]}}} Fraction of total
 computing capacity dedicated to user-defined processing and storage \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} This allocation does not include the resources
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} This allocation does not include the resources
 needed to support the expected load of queries against the catalog
-database. \\ \cdashline{1-2}
+database.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
@@ -3566,7 +3913,8 @@ OSS-REQ-0179 & Data Products Processing Infrastructure \\
 
 
   
- \newpage \subsection{[LVV-18847] DMS-REQ-0397-V-01: Prompt/DR Processing of Data from Special Programs\_1 }\label{lvv-18847}
+ \newpage 
+\subsection{[LVV-18847] DMS-REQ-0397-V-01: Prompt/DR Processing of Data from Special Programs\_1 }\label{lvv-18847}
 
 \begin{longtable}{cccc}
 \hline
@@ -3588,17 +3936,25 @@ Undefined
 \hline
 \multicolumn{2}{c}{\textbf{Requirement Details}}\\ \hline
 Requirement ID & DMS-REQ-0397 \\ \cdashline{1-2}
-Requirement Description & \textbf{Specification:} It shall be possible for special programs data
+Requirement Description &
+\begin{minipage}[]{13cm}
+\textbf{Specification:} It shall be possible for special programs data
 to be processed with the prompt- and/or annual-release pipelines
-alongside data from the main survey. \\ \cdashline{1-2}
-Requirement Discussion & \textbf{Discussion:} The data from Special Programs should only be
+alongside data from the main survey.
+\end{minipage}
+\\ \cdashline{1-2}
+Requirement Discussion &
+\begin{minipage}[]{13cm}
+\textbf{Discussion:} The data from Special Programs should only be
 included in the prompt- and/or annual-release processing along with data
 from the wide-fast-deep main survey when it is (a) possible for DM to do
 so without additional effort and (b) beneficial to the LSST's main
 science objectives. Decisions about which data are included in the
 Prompt/DR processing pipelines are applied to which Special Programs
 will be made by the Operations team, after consideration of the
-scientific goals, computational resources, and data rights policy. \\ \cdashline{1-2}
+scientific goals, computational resources, and data rights policy.
+\end{minipage}
+\\ \cdashline{1-2}
 Requirement Priority & 2 \\ \cdashline{1-2}
 Upper Level Requirement &
 \begin{tabular}{cl}
