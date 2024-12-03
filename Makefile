@@ -56,3 +56,7 @@ myacronyms.txt :
 
 skipacronyms.txt :
 	touch skipacronyms.txt
+
+# neede to install docsteady and have JIRA_USER JIRA_PASSWORD and ZEPHYR_TOKEN defined in env
+docgen :
+	docsteady baseline-ve --json=True --subcomponent="Infrastructure" jira_docugen.tex
