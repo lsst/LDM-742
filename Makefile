@@ -38,6 +38,7 @@ clean:
 	rm -f $(DOCNAME).bbl
 	rm -f $(DOCNAME).pdf
 	rm -f meta.tex
+	rm -f ve_baseline.json
 
 .FORCE:
 
@@ -58,5 +59,5 @@ skipacronyms.txt :
 	touch skipacronyms.txt
 
 # neede to install docsteady and have JIRA_USER JIRA_PASSWORD and ZEPHYR_TOKEN defined in env
-docgen :
-	docsteady baseline-ve --json=True --subcomponent="Infrastructure" jira_docugen.tex
+docugen :
+	docsteady baseline-ve --dump=True --subcomponent="Infrastructure" jira_docugen.tex
